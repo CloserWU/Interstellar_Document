@@ -18,7 +18,7 @@
 到NVIDIA官方网站下载cuda9.0。https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=CentOS&target_version=7&target_type=runfilelocal<br />
 可以在本地打开网址查看，下载runfile(local)。<br />
     
-![cuda](https://github.com/CloserWU/image/raw/master/image/cuda.png)<br />
+![cuda](https://github.com/CloserWU/tf-gpu/raw/master/image/cuda.png)<br />
 
 服务器上具体命令：<p><code>wget -c https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run</code></p><br />
 下载成功后，安装<br /><br />
@@ -49,7 +49,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/path/to/your/cuda/extras/CUPTI/lib
 2.下载cudnn<br />
 ====
 
-![cudnn](https://github.com/CloserWU/image/raw/master/image/cudnn.png)<br />
+![cudnn](https://github.com/CloserWU/tf-gpu/raw/master/image/cudnn.png)<br />
 
 命令： <code>wget -c --http-user=XXX --http-passwd=XXX https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.3.0/prod/9.0_2018920/cudnn-9.0-linux-x64-v7.3.0.29</code><br />
 因为下载cudnn需要注册NVIDIA的账号，所以下载时要利用wget 并加上你的用户名和密码。<br />
@@ -124,33 +124,33 @@ jupyter服务器密码：123456<br />
 ====
 我已经上传了吴恩达DeepLearning.ai课程的作业以及答案，以及实例分割模型Mask R_CNN。分别可以在jupyter运行和命令行运行。
     
-![DL](https://github.com/CloserWU/image/raw/master/image/dl.png)<br />
+![DL](https://github.com/CloserWU/tf-gpu/raw/master/image/dl.png)<br />
 
 1.ipynb文件可以通过jupyter服务。
 - 终端输入jupyter notebook，启用jupyter服务。
 
-![jp](https://github.com/CloserWU/image/raw/master/image/jp.png)<br />
+![jp](https://github.com/CloserWU/tf-gpu/raw/master/image/jp.png)<br />
 
 - 打开本地浏览器，输入https://(ip):9999。具体端口号看倒数第二行的显示，有时会是10000<br />
 - 然后点击继续前往
 
-![go](https://github.com/CloserWU/image/raw/master/image/go.png)<br />
+![go](https://github.com/CloserWU/tf-gpu/raw/master/image/go.png)<br />
 
 - 打开一个ipynb文件，例如
 
-![keras](https://github.com/CloserWU/image/raw/master/image/kreas.png)<br />
+![keras](https://github.com/CloserWU/tf-gpu/raw/master/image/kreas.png)<br />
 
 - 选择kernel -> change kernel -> Python [conda envs:tf-gpu]<br />
 
-![change](https://github.com/CloserWU/image/raw/master/image/change.png)<br />
+![change](https://github.com/CloserWU/tf-gpu/raw/master/image/change.png)<br />
 
 即可看到转换成功
 
-![tf-gpu](https://github.com/CloserWU/image/raw/master/image/tf-gpu.png)<br />
+![tf-gpu](https://github.com/CloserWU/tf-gpu/raw/master/image/tf-gpu.png)<br />
 
 - run即可运行,并且在Xshell可以看到以及在占用GPU资源<br />
 
-![gpu](https://github.com/CloserWU/image/raw/master/image/gpu.png)<br />
+![gpu](https://github.com/CloserWU/tf-gpu/raw/master/image/gpu.png)<br />
 
 2.py文件可以通过命令行方式运行 
 - 命令：<code>source activate tf-gpu</code><br />
