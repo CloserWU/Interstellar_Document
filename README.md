@@ -158,7 +158,7 @@ jupyter服务器密码：123456<br />
 训练Mask R_CNN时：
 <code>python coco.py train --dataset=/path/to/coco/dataset --model=coco</code><br />
 
-#参考资料
+参考资料
 ====
 1. Linux系统 conda 创建python虚拟环境 https://blog.csdn.net/dongwanli666/article/details/78920059<br />
 2. 在服务器上配置jupyter notebook https://blog.csdn.net/computerme/article/details/78751670<br />
