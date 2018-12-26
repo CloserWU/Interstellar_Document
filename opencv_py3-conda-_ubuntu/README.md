@@ -78,3 +78,9 @@ cmake完成后，如果不报错，则可进行下一步
 ![make_sucess!](https://github.com/CloserWU/Interstellar_Document/raw/master/image/sucess.png)  
 
 Lucky man！
+
+## 5.参考资料  
+ - Ubuntu 16.04编译Opencv 3.4 (For python2.7 and python3.5)https://blog.csdn.net/houxn22/article/details/79403753?utm_source=blogxgwz6  
+ - ubuntu16.04安装配置opencv3.2.0（完全安装）https://blog.csdn.net/m0_37724574/article/details/79065889  
+ - Ubuntu16.04下安装OpenCV3.2.0 https://www.cnblogs.com/arkenstone/p/6490017.html
+
