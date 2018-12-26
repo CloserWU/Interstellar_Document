@@ -58,7 +58,7 @@ cmake -D WITH\_TBB=ON \
 
 最后cmake完成后应为这样，python3那一块为主解释器，这样make后才能在anaconda环境下使用  
 
-![cmake_sucess](https://github.com/CloserWU/Interstellar_Document/raw/master/image/cmake.jpg)   
+![cmake_sucess!](https://github.com/CloserWU/Interstellar_Document/raw/master/image/cmake.png)   
 
 ## 3.make
 
@@ -75,5 +75,6 @@ cmake完成后，如果不报错，则可进行下一步
 输入`import cv2`
 输入`print(cv2.__version__)`没有报错即为安装成功  
 
-![make_sucess](https://github.com/CloserWU/Interstellar_Document/raw/master/image/sucess.jpg)  
+![make_sucess!](https://github.com/CloserWU/Interstellar_Document/raw/master/image/sucess.png)  
+
 Lucky man！
