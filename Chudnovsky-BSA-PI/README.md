@@ -16,5 +16,5 @@ BSA(二进制分裂算法)用于减少串联扩展的计算量(计算时间)
 (gmpy2)，所以实现起来还是比较方便  
 
 # 最终计算三千两百万位圆周率的结果
-![PI](Chudnovsky-BSA-PI.jpg)
+![PI](Chudnovsky-BSA-PI.jpg)  
 环境是Intel i7-4720HQ
