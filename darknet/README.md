@@ -1,11 +1,9 @@
-# win10修改darknet(yolov3)源代码令其裁剪出bbox并保存到本地
-1.修改image.c中`draw_detections_v3`函数
+## 1.修改image.c中`draw_detections_v3`函数
 ----
-首先添加一个函数 
-    
+首先添加一个函数
 
-
-    IplImage* image_to_iplImage(image p,IplImage* disp){
+```c
+IplImage* image_to_iplImage(image p,IplImage* disp){
 	// 将image结构体中存放的一维数组转换成二维图像。 maybe
 		image copy = copy_image(p);
 		if(p.c == 3) rgbgr_image(copy);
@@ -20,14 +18,16 @@
 			}
 		}
 		return disp;}
-
+```
 并在`demo.c`中添加函数声明`IplImage* Image_to_iplimage(image im, IplImage* img);`  
 这个函数是用来修改`iamge im`的格式  
 源代码中image结构体对图片的保存时一维的，需要修改成为图片格式转为`IplImage`用于opencv输出    
-然后就是修改image.c代码了  
-<code>void draw_detections_v3(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, int ext_output){</code></br>
-<code>int selected_detections_num;</code></br>
-<code>detection_with_class* selected_detections = get_actual_detections(dets, num, thresh, &selected_detections_num);</code></br>
+然后就是修改image.c代码了 
+```c
+void draw_detections_v3(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, int ext_output)
+{
+    int selected_detections_num;
+    detection_with_class* selected_detections = get_actual_detections(dets, num, thresh, &selected_detections_num);
 
     // text output
     qsort(selected_detections, selected_detections_num, sizeof(*selected_detections), compare_by_lefts);
@@ -124,12 +124,17 @@
                 //cvShowImage("src_bbox",src);
                 //cvShowImage("crop",crop);
                 time_t t;
+                struct tm *lt;
                 t = time(NULL);
                 int i = time(&t);
+                lt = localtime(&i);
+                char nowtime[24];
+                memset(nowtime, 0, sizeof(nowtime));
+                strftime(nowtime, 24, "%Y%m%d%H%M%S", lt);
                 char path[] = "crops\\";
-                char p[] = "0";
-                _itoa(i, p, 10);
-                strcat(path, p);
+                //char p[] = "0";
+                //_itoa(i, p, 10);
+                strcat(path, nowtime);
                 strcat(path, ".jpg");
                 cvSaveImage(path, crop, 0);
                 //cvSaveImage("crops\\crop.jpg", crop, 0);
@@ -155,17 +160,16 @@
             free_image(tmask);
         }
     }
-    free(selected_detections);}
+    free(selected_detections);
+}
+```
 需要修改的部分用`commit`标记
-
-到此为止，已经能够用`darknet_coco.cmd`这个脚本运行单张图片并得到crop后的图片了，图保存在当前文件夹crops文件夹下  
-
-2.修改`draw_detections_cv_v3`函数
+到此为止，已经能够用`darknet_coco.cmd`这个脚本运行单张图片并得到crop后的图片了，图保存在当前文件夹crops文件夹下
+## 2.修改`draw_detections_cv_v3`函数
 ----
-如下  
-
-    void draw_detections_cv_v3(IplImage* show_img, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, int ext_output)
-    {
+```c
+void draw_detections_cv_v3(IplImage* show_img, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, int ext_output)
+{
     int i, j;
     if (!show_img) return;
     static int frame_id = 0;
@@ -251,12 +255,17 @@
                 cvCopy(src, crop, 0);
                 cvResetImageROI(src);
                 time_t t;
+                struct tm *lt;
                 t = time(NULL);
                 int i = time(&t);
+                lt = localtime(&i);
+                char nowtime[24];
+                memset(nowtime, 0, sizeof(nowtime));
+                strftime(nowtime, 24, "%Y%m%d%H%M%S", lt);
                 char path[] = "crops\\";
-                char p[] = "0";
-                _itoa(i, p, 10);
-                strcat(path, p);
+                //char p[] = "0";
+                //_itoa(i, p, 10);
+                strcat(path, nowtime);
                 strcat(path, ".jpg");
                 cvSaveImage(path, crop, 0);
             }
@@ -314,8 +323,8 @@
     if (ext_output) {
         fflush(stdout);
     }
-    }
-
+}
+```
 修改部分为`commit`和`//(空)`部分  
 意在找到能识别人的框，让裁剪输出，并且取消输出包围框和标签  
 然后运行`darknet_demo_coco.cmd`即可得到裁剪的图片
