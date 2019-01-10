@@ -1,8 +1,10 @@
 # docker创建mysql容器并外部访问
 1.mysql容器
----
+---  
 要使用mysql低于8.0版本的，否则外部连接不上！  
-`docker pull mysql:5.6.41`  
+
+`docker pull mysql:5.6.41`   
+
 2.执行以下命令  
 ---
 `docker run --name centos-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.6.41`</br>
