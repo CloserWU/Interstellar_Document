@@ -136,6 +136,17 @@ models: () => [
         ]
       },
       {
+        "path": "/_dashboard",
+        "icon": "dashboard",
+        "name": "_dashboard",
+        "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p___Dashboard__mainpage" */'../_Dashboard/mainpage'),
+  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
+}),
+        "exact": true
+      },
+      {
         "path": "/image",
         "icon": "form",
         "name": "image",

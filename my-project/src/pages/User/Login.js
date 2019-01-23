@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import { formatMessage, FormattedMessage } from 'umi/locale';
 import Link from 'umi/link';
-import { Checkbox, Alert, Icon, Card, Button } from 'antd';
+import { Checkbox, Alert, Icon, Card, Button, Modal, Avatar } from 'antd';
 import Login from '@/components/Login';
 import styles from './Login.less';
 
@@ -16,6 +16,7 @@ class LoginPage extends Component {
   state = {
     type: 'account',
     autoLogin: true,
+    visible: false,
   };
 
   onTabChange = type => {
@@ -63,6 +64,20 @@ class LoginPage extends Component {
     <Alert style={{ marginBottom: 24 }} message={content} type="error" showIcon />
   );
 
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+
   render() {
     const { login, submitting } = this.props;
     const { type, autoLogin } = this.state;
@@ -77,6 +92,9 @@ class LoginPage extends Component {
               this.loginForm = form;
             }}
           >
+            <Tab key="qrcoda" tab={formatMessage({ id: 'app.login.qrcode' })}>
+              <img className={styles.img} src="https://github.com/CloserWU/Interstellar_Document/raw/master/image/qrcode.png" width="150px" />
+            </Tab>
             <Tab key="account" tab={formatMessage({ id: 'app.login.tab-login-credentials' })}>
               {login.status === 'error' &&
                 login.type === 'account' &&
@@ -125,7 +143,7 @@ class LoginPage extends Component {
                   },
                 ]}
               />
-              <Captcha
+              <Captcha   // 验证码
                 name="captcha"
                 placeholder={formatMessage({ id: 'form.verification-code.placeholder' })}
                 countDown={120}
@@ -153,7 +171,7 @@ class LoginPage extends Component {
             </Submit>
             <div className={styles.other}>
               <FormattedMessage id="app.login.sign-in-with" />
-              <Icon type="alipay-circle" className={styles.icon} theme="outlined" />
+              <Icon type="qrcode" className={styles.icon} theme="outlined" />
               <Icon type="taobao-circle" className={styles.icon} theme="outlined" />
               <Icon type="weibo-circle" className={styles.icon} theme="outlined" />
               <Link className={styles.register} to="/user/register">

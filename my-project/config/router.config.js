@@ -43,6 +43,13 @@ export default [
       },
 
       {
+        path:'/_dashboard',
+        icon:'dashboard',
+        name:'_dashboard',
+        component:'./_Dashboard/mainpage',
+      },
+
+      {
         path: '/image',
         icon: 'form',
         name: 'image',
