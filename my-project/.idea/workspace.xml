@@ -92,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/router.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="126" column="57" lean-forward="true" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
+            <state>
+              <caret line="126" column="57" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -101,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/MyAccount.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5889">
-              <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            <state relative-caret-position="294">
+              <caret line="217" column="18" lean-forward="true" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -116,22 +116,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/api.js">
+        <entry file="file://$PROJECT_DIR$/mock/rule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1482">
-              <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-304">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mock/rule.js">
+        <entry file="file://$PROJECT_DIR$/mock/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
-              <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+            <state relative-caret-position="395">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -139,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/List/TableList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12540">
-              <caret line="660" column="31" lean-forward="true" selection-start-line="660" selection-start-column="31" selection-end-line="660" selection-end-column="31" />
+            <state relative-caret-position="12046">
+              <caret line="660" column="31" selection-start-line="660" selection-start-column="31" selection-end-line="660" selection-end-column="31" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -151,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/Info.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+            <state relative-caret-position="95">
+              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -173,7 +170,7 @@
         <entry file="file://$PROJECT_DIR$/src/pages/List/TableList.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="38">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -427,11 +424,12 @@
       <workItem from="1548206301770" duration="6628000" />
       <workItem from="1548291005565" duration="1189000" />
       <workItem from="1548320465847" duration="6543000" />
+      <workItem from="1548335618100" duration="2247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98929000" />
+    <option name="totallyTimeSpent" value="101176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -442,7 +440,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993395" weight="0.23743017" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993395" weight="0.19972067" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -498,13 +496,6 @@
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mock/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="91" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
         </state>
       </provider>
     </entry>
@@ -614,13 +605,6 @@
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mock/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
@@ -763,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/List/TableList.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/BaseView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3040">
@@ -777,13 +754,6 @@
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/router.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="126" column="57" lean-forward="true" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -814,12 +784,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/List/TableList.js">
+    <entry file="file://$PROJECT_DIR$/src/components/StandardTable/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12540">
-          <caret line="660" column="31" lean-forward="true" selection-start-line="660" selection-start-column="31" selection-end-line="660" selection-end-column="31" />
+        <state relative-caret-position="222">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/router.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="126" column="57" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/List/TableList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12046">
+          <caret line="660" column="31" selection-start-line="660" selection-start-column="31" selection-end-line="660" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/Info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -831,29 +828,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/Info.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/List/TableList.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/StandardTable/index.js">
+    <entry file="file://$PROJECT_DIR$/mock/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="95">
+          <caret line="5" column="90" lean-forward="true" selection-start-line="5" selection-start-column="90" selection-end-line="5" selection-end-column="90" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1482">
+        <state relative-caret-position="770">
           <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -861,20 +852,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/models/rule.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mock/rule.js">
+    <entry file="file://$PROJECT_DIR$/mock/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        <state relative-caret-position="395">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mock/rule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-304">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/models/rule.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/_User1/Settings/MyAccount.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5889">
-          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        <state relative-caret-position="294">
+          <caret line="217" column="18" lean-forward="true" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>

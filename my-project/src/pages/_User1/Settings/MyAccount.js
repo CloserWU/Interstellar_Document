@@ -37,6 +37,8 @@ const getValue = obj =>
     .join(',');
 const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
+const code = ['156149465','17984961'];
+
 const CreateForm = Form.create()(props => {
   const { modalVisible, form, handleAdd, handleModalVisible } = props;
   const okHandle = () => {
@@ -290,66 +292,49 @@ class MyAccount extends PureComponent {
   columns = [
     {
       title: '项目',
-      dataIndex: 'project',
-      render : val => <Avatar src={val} />,
+      dataIndex: 'Project',
+      render : val => <img src={val} />,
     },
     {
       title: '名称',
-      dataIndex: 'desc',
+      dataIndex: 'Name',
+      render: val => (
+        <div>
+          <h3>{val[0]}</h3>
+          <h4>{val[1]}</h4>
+        </div>
+      ),
     },
     {
       title: '价格',
-      dataIndex: 'callNo',
+      dataIndex: 'Price',
       sorter: true,
       align: 'right',
-      render: val => `${val} 万`,
+      render: val => `${val}`,
       // mark to display a total number
       needTotal: true,
     },
     {
       title: '数量',
-      dataIndex: 'status',
-      filters: [
-        {
-          text: status[0],
-          value: 0,
-        },
-        {
-          text: status[1],
-          value: 1,
-        },
-        {
-          text: status[2],
-          value: 2,
-        },
-        {
-          text: status[3],
-          value: 3,
-        },
-      ],
-      render(val) {
-        return <Badge status={statusMap[val]} text={status[val]} />;
-      },
+      dataIndex: 'Count',
     },
     {
       title: '规格',
-      dataIndex: 'updatedAt',
-      sorter: true,
-      render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
+      dataIndex: 'Standard',
     },
     {
       title: '定制',
       render: (text, record) => (
         <Fragment>
-          <a onClick={() => this.handleUpdateModalVisible(true, record)}>配置</a>
+          <a onClick={() => this.handleUpdateModalVisible(true, record)}>定制</a>
           <Divider type="vertical" />
-          <a href="">订阅警报</a>
+          <a href="">身体数据</a>
         </Fragment>
       ),
     },
     {
       title: '总价',
-      dataIndex: 'name',
+      dataIndex: 'TotalPrice',
     },
   ];
 
