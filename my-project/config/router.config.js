@@ -122,6 +122,11 @@ export default [
                 component: './_User1/Settings/BaseView',
               },
               {
+                icon: 'cloud',
+                path: '/_User1/settings/myaccount',
+                component: './_User1/Settings/MyAccount',
+              },
+              {
                 path: '/_User1/settings/security',
                 component: './_User1/Settings/SecurityView',
               },
