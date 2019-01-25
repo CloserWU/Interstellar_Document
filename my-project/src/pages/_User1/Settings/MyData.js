@@ -22,8 +22,6 @@ import {
 import Result from '@/components/Result';
 
 import styles from './MyData.less';
-//   /* 217-227行不应该添加 ，因为修改会报错，因为城市假信息无法读出来 */
-
 
 
 const FormItem = Form.Item;
@@ -124,8 +122,8 @@ class MyData extends PureComponent {
       if (key === 'edit') this.showEditModal(currentItem);
       else if (key === 'delete') {
         Modal.confirm({
-          title: '删除地址',
-          content: '确定删除该地址吗？',
+          title: '删除数据',
+          content: '确定删除该数据吗？',
           okText: '确认',
           cancelText: '取消',
           onOk: () => this.deleteItem(currentItem.id),
@@ -171,10 +169,35 @@ class MyData extends PureComponent {
     );
 
     const fenjie = (mydata, i) => {
-      if(i === '0'){
-        return mydata[0];
+      if(mydata instanceof Array){
+        if(i === '0'){
+          return mydata[0].toString();
+        }
+        if (i === '1'){
+          return mydata[1].toString();
+        }
+        if (i === '2'){
+          return mydata[2].toString();
+        }
+        if (i === '3'){
+          return mydata[3].toString();
+        }
+        if (i === '4'){
+          return mydata[4].toString();
+        }
+        if (i === '5'){
+          return mydata[5].toString();
+        }
+        if (i === '6'){
+          return mydata[6].toString();
+        }
+        if (i === '7'){
+          return mydata[7].toString();
+        }
       }
       return '';
+
+
     };
 
     const getModalContent = () => {
@@ -204,46 +227,52 @@ class MyData extends PureComponent {
                 <FormItem label="前腰围" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: (current.mydata),
+                    initialValue: fenjie(current.mydata, '0'),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
-                <FormItem label="前腰围" {...this.formLayout}>
+                <FormItem label="前臀围" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: (current.mydata),
+                    initialValue: fenjie(current.mydata, '1'),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
-                <FormItem label="前腰围" {...this.formLayout}>
+                <FormItem label="直裆长" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: (current.mydata),
+                    initialValue: fenjie(current.mydata, '2'),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
-                <FormItem label="前腰围" {...this.formLayout}>
+                <FormItem label="膝  长" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: (current.mydata),
+                    initialValue: fenjie(current.mydata, '3'),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
-                <FormItem label="昵称" {...this.formLayout}>
-                  {getFieldDecorator('addname', {
+                <FormItem label="腿  长" {...this.formLayout}>
+                  {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: current.addname,
+                    initialValue: fenjie(current.mydata, '4'),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
-                <FormItem label="详细地址" {...this.formLayout}>
-                  {getFieldDecorator('addaddress', {
+                <FormItem label="腰  长" {...this.formLayout}>
+                  {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: current.addaddress,
+                    initialValue: fenjie(current.mydata, '5'),
+                  })(<Input placeholder="请输入" />)}
+                </FormItem>
+                <FormItem label="后腰围" {...this.formLayout}>
+                  {getFieldDecorator('mydata', {
+                    rules: [{ required: true, message: '请输入任务名称' }],
+                    initialValue: fenjie(current.mydata, '6'),
+                  })(<Input placeholder="请输入" />)}
+                </FormItem>
+                <FormItem label="后臀围" {...this.formLayout}>
+                  {getFieldDecorator('mydata', {
+                    rules: [{ required: true, message: '请输入任务名称' }],
+                    initialValue: fenjie(current.mydata, '7'),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
 
-                <FormItem label="电话号码" {...this.formLayout}>
-                  {getFieldDecorator('addtelnum', {
-                    rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: current.addtelnum,
-                  })(<Input placeholder="请输入" />)}
-                </FormItem>
               </Form>
             </Col>
           </Row>
@@ -323,16 +352,14 @@ class MyData extends PureComponent {
                           {item.mydata[3]}
                           ，腿&emsp;长-
                           {item.mydata[4]}
-                          ，前臀围-
+                          ，腰&emsp;长-
                           {item.mydata[5]}
                         </div>
                         <div>
-                          腰&emsp;长-
+                          后腰围-
                           {item.mydata[6]}
-                          ，后腰围-
-                          {item.mydata[7]}
                           ，后臀围-
-                          {item.mydata[8]}
+                          {item.mydata[7]}
                         </div>
                       </div>
                     }
@@ -344,7 +371,7 @@ class MyData extends PureComponent {
           </Card>
         </div>
         <Modal
-          centered={true}
+          centered='true'
           title={done ? null : `数据${current ? '编辑' : '添加'}`}
           className={styles.standardListForm}
           width={1080}
