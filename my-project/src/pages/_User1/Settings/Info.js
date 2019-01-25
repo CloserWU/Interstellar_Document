@@ -11,6 +11,7 @@ const { Item } = Menu;
 const Icons = {
   base: <Icon type="cloud" />,
   myaccount: <Icon type="user" />,
+  mydata: <Icon type="user" />,
   security: <Icon type="form" />,
   binding: <Icon type="table" />,
   address: <Icon type="sync" />,
@@ -26,6 +27,7 @@ class Info extends Component {
     const menuMap = {
       base: <FormattedMessage id="app.settings.menuMap.basic" defaultMessage="Basic Settings" />,
       myaccount: <FormattedMessage id="app.settings.menuMap.myaccount" defaultMessage="MyAccount" />,
+      mydata: <FormattedMessage id="app.settings.menuMap.mydata" defaultMessage="MyData" />,
       security: (
         <FormattedMessage id="app.settings.menuMap.security" defaultMessage="Security Settings" />
       ),

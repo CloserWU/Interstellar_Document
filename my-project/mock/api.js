@@ -69,14 +69,22 @@ const geographic = ['浙江省杭州市', '浙江省宁波市', '上海市', '�
 
 const addaddress = ['江干区浙江理工大学', '宁波大学', '复旦大学', '广州大学', '清华大学'];
 
+const mydata = [
+  ['1','2','3','4','5','6','44','55','12'],
+  ['12','21','321','45','15','26','44','55','12'],
+  ['122','21','32','44','53','62','44','55','12'],
+];
+
 function fakeList(count) {
   const list = [];
   for (let i = 0; i < count; i += 1) {
     list.push({
+      i: `${i}`,
       id: `fake-list-${i}`,
       addname: addname[i % 5],
       addtelnum: addtelnum[i % 5],
       addaddress: addaddress[i % 5],
+      mydata: mydata[i % 3],
       geographic: geographic[i % 5],
       owner: user[i % 10],
       title: titles[i % 8],
@@ -85,7 +93,7 @@ function fakeList(count) {
       status: ['active', 'exception', 'normal'][i % 3],
       percent: Math.ceil(Math.random() * 50) + 50,
       logo: avatars[i % 8],
-      href: 'https://ant.design',
+      href: '/',
       updatedAt: new Date(new Date().getTime() - 1000 * 60 * 60 * 2 * i),
       createdAt: new Date(new Date().getTime() - 1000 * 60 * 60 * 2 * i),
       subDescription: desc[i % 5],

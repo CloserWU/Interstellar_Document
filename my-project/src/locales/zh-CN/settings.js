@@ -1,6 +1,7 @@
 export default {
   'app.settings.menuMap.basic': '用户信息',
   'app.settings.menuMap.myaccount': '我的订单',
+  'app.settings.menuMap.mydata': '我的数据',
   'app.settings.menuMap.security': '安全设置',
   'app.settings.menuMap.binding': '账号绑定',
   'app.settings.menuMap.address': '收货地址',
