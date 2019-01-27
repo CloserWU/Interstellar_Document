@@ -61,15 +61,15 @@ const user = [
   '仲尼',
 ];
 
-const addname = ['aaa', 'bbb', 'ccc', 'ddd', 'fff'];
+const Addname = ['aaa', 'bbb', 'ccc', 'ddd', 'fff'];
 
-const addtelnum = ['110', '119', '120', '114', '159'];
+const Addtelnum = ['110', '119', '120', '114', '159'];
 
-const geographic = ['浙江省杭州市', '浙江省宁波市', '上海市', '广州市', '北京市'];
+const geographic1 = ['浙江省杭州市', '浙江省宁波市', '上海市', '广州市', '北京市'];
 
-const addaddress = ['江干区浙江理工大学', '宁波大学', '复旦大学', '广州大学', '清华大学'];
+const Addaddress = ['江干区浙江理工大学', '宁波大学', '复旦大学', '广州大学', '清华大学'];
 
-const mydata = [
+const myData = [
   ['1','2','3','4','5','6','44','55'],
   ['12','21','321','45','15','26','44','55'],
   ['122','21','32','44','53','62','44','55'],
@@ -81,11 +81,11 @@ function fakeList(count) {
     list.push({
       i: `${i}`,
       id: `fake-list-${i}`,
-      addname: addname[i % 5],
-      addtelnum: addtelnum[i % 5],
-      addaddress: addaddress[i % 5],
-      mydata: mydata[i % 3],
-      geographic: geographic[i % 5],
+      addname: Addname[i % 5],
+      addtelnum: Addtelnum[i % 5],
+      addaddress: Addaddress[i % 5],
+      Mydata: myData[i % 3],
+      geographic1: geographic1[i % 5],
       owner: user[i % 10],
       title: titles[i % 8],
       avatar: avatars[i % 8],

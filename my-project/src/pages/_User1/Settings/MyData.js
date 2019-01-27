@@ -148,7 +148,7 @@ class MyData extends PureComponent {
       <div className={styles.listContent}>
         <div className={styles.listContentItem} />
         <div className={styles.listContentItem}>
-          {i === '0' ? <a href={href}><span>默认数据</span></a> : <a href={href}><span>设为默认</span></a>}
+          {i === "0" ? <a href={href}><span>默认数据</span></a> : <a href={href}><span>设为默认</span></a>}
         </div>
         <div className={styles.listContentItem} />
       </div>
@@ -170,29 +170,11 @@ class MyData extends PureComponent {
 
     const fenjie = (mydata, i) => {
       if(mydata instanceof Array){
-        if(i === '0'){
-          return mydata[0].toString();
-        }
-        if (i === '1'){
-          return mydata[1].toString();
-        }
-        if (i === '2'){
-          return mydata[2].toString();
-        }
-        if (i === '3'){
-          return mydata[3].toString();
-        }
-        if (i === '4'){
-          return mydata[4].toString();
-        }
-        if (i === '5'){
-          return mydata[5].toString();
-        }
-        if (i === '6'){
-          return mydata[6].toString();
-        }
-        if (i === '7'){
-          return mydata[7].toString();
+        if(mydata.length !== 0){
+          if(i === 0){
+            console.log('11111')
+          }
+          return mydata[i];
         }
       }
       return '';
@@ -225,51 +207,51 @@ class MyData extends PureComponent {
             <Col span={12}>
               <Form onSubmit={this.handleSubmit}>
                 <FormItem label="前腰围" {...this.formLayout}>
-                  {getFieldDecorator('mydata', {
+                  {getFieldDecorator('Mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '0'),
+                    initialValue: fenjie(current.Mydata, 3),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="前臀围" {...this.formLayout}>
-                  {getFieldDecorator('mydata', {
+                  {getFieldDecorator('Mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '1'),
+                    initialValue: fenjie(current.Mydata, 1),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="直裆长" {...this.formLayout}>
-                  {getFieldDecorator('mydata', {
+                  {getFieldDecorator('Mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '2'),
+                    initialValue: fenjie(current.Mydata, 2),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="膝  长" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '3'),
+                    initialValue: fenjie(current.Mydata, 3),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="腿  长" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '4'),
+                    initialValue: fenjie(current.Mydata, 4),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="腰  长" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '5'),
+                    initialValue: fenjie(current.Mydata, 5),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="后腰围" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '6'),
+                    initialValue: fenjie(current.Mydata, 6),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="后臀围" {...this.formLayout}>
                   {getFieldDecorator('mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.mydata, '7'),
+                    initialValue: fenjie(current.Mydata, 7),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
 
@@ -341,25 +323,25 @@ class MyData extends PureComponent {
                       <div>
                         <div>
                           前腰围-
-                          {item.mydata[0]}
+                          {fenjie(item.Mydata, 0)}
                           ，前臀围-
-                          {item.mydata[1]}
+                          {fenjie(item.Mydata, 1)}
                           ，直裆长-
-                          {item.mydata[2]}
+                          {fenjie(item.Mydata, 2)}
                         </div>
                         <div>
                           膝&emsp;长-
-                          {item.mydata[3]}
+                          {fenjie(item.Mydata, 3)}
                           ，腿&emsp;长-
-                          {item.mydata[4]}
+                          {fenjie(item.Mydata, 4)}
                           ，腰&emsp;长-
-                          {item.mydata[5]}
+                          {fenjie(item.Mydata, 5)}
                         </div>
                         <div>
                           后腰围-
-                          {item.mydata[6]}
+                          {fenjie(item.Mydata, 6)}
                           ，后臀围-
-                          {item.mydata[7]}
+                          {fenjie(item.Mydata, 7)}
                         </div>
                       </div>
                     }
@@ -371,7 +353,7 @@ class MyData extends PureComponent {
           </Card>
         </div>
         <Modal
-          centered='true'
+          centered="true"
           title={done ? null : `数据${current ? '编辑' : '添加'}`}
           className={styles.standardListForm}
           width={1080}

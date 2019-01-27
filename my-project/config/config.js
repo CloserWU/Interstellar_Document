@@ -58,6 +58,7 @@ export default {
   define: {
     APP_TYPE: process.env.APP_TYPE || '',
   },
+  history: 'browser', // 带# 可选  hash
   treeShaking: true,
   targets: {
     ie: 11,

@@ -154,11 +154,11 @@ class AddressView extends PureComponent {
       total: 50,
     };
 
-    const ListContent = ({ data: { geographic, addaddress } }) => (
+    const ListContent = ({ data: { geographic1, addaddress } }) => (
       <div className={styles.listContent}>
         <div className={styles.listContentItem} />
         <div className={styles.listContentItem}>
-          {geographic === '浙江省杭州市' ? (
+          {geographic1 === '浙江省杭州市' ? (
             addaddress === '江干区浙江理工大学' ? (
               <span>默认地址</span>
             ) : (
@@ -212,11 +212,11 @@ class AddressView extends PureComponent {
           </FormItem>
 
           <FormItem label="地址" {...this.formLayout}>
-            {getFieldDecorator('geographic', {
+            {getFieldDecorator('geographic1', {
               rules: [
                 {
                   validator: validatorGeographic,
-                  initialValue: current.geographic,
+                  initialValue: current.geographic1,
                 },
               ],
             })(<GeographicView />)}
@@ -293,7 +293,7 @@ class AddressView extends PureComponent {
                     }
                     description={
                       <div>
-                        {item.geographic}
+                        {item.geographic1}
                         {item.addaddress}
                       </div>
                     }

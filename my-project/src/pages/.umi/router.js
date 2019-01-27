@@ -258,6 +258,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/Info'),
@@ -276,6 +277,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/BaseView'),
@@ -289,6 +291,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/MyAccount'),
@@ -302,6 +305,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/MyData'),
@@ -315,6 +319,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/SecurityView'),
@@ -328,6 +333,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/BindingView'),
@@ -341,6 +347,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/AddressView'),
@@ -354,6 +361,7 @@ models: () => [
   app: window.g_app,
 models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__geographic.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}}),
+  import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/NotificationView'),
