@@ -102,5 +102,34 @@ SyntaxError: Unexpected identifier
 npm install -g n
 n latest
 ```
+很尬的一点是，`npm start`也就是8000端口没法在后台运行，只要XShell关闭，8000端口就关闭了，这时80端口也访问不到了.....  
+虽然整个过程的意义不大，但是......没有什么好但是的，就是意义不大（逃🏃‍♂️
 
-虽然整个过程的意义不大，但是......没有什么好但是的，就是意义不大（逃
+**更新**
+
+---
+`npm start`可以后台运行👏
+```shell
+which nohup
+yum provides */nohup # 没有的话就下载
+cd ~
+vim .bash_profile
+# 在PATH=$PATH:$HOME/bin后面加上which nohup的地址
+PATH=$PATH:$HOME/bin:/usr/bin/nohup 
+source ~/.bash_profile
+cd /path/to/your/project
+nohup npm start &
+exit # 退出账户
+```
+
+参考资料：
+https://blog.csdn.net/chanlingmai5374/article/details/80762983
+https://blog.csdn.net/qq_27384769/article/details/78849930
+
+附：
+```shell
+netstat -ntlp | grep 80 查看端口占用情况
+
+ps -ef | grep npm  查看端口或服务对应进程
+ps -ef | grep node
+```
