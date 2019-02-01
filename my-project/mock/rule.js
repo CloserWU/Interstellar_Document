@@ -2,37 +2,31 @@ import { parse } from 'url';
 
 const Name = [
   ['女式优雅长裙', '15456613'],
-  ['女士弹性中长裙','134646'],
-  ['女士优雅中长裙','583156156'],
+  ['女士弹性中长裙', '134646'],
+  ['女士优雅中长裙', '583156156'],
 ];
 
 const Project = [
   'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
   'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
 ];
-const Price =[
-  '276.13',
-  '325.00',
-];
-const Count = ['1','2'];
-const Standard = ['黑.L','白.M'];
-const Mode = ['已选择','不需要定制'];
-const TotalPrice =[
-  '286.13',
-  '325.00',
-];
+const Price = ['276.13', '325.00'];
+const Count = ['1', '2'];
+const Standard = ['黑.L', '白.M'];
+const Mode = ['已选择', '不需要定制'];
+const TotalPrice = ['286.13', '325.00'];
 
 // mock tableListDataSource
 let tableListDataSource = [];
 for (let i = 0; i < 46; i += 1) {
   tableListDataSource.push({
-    Project : Project[i % 2],
-    Name : Name[i % 3],
-    Price : Price[i % 2],
-    Count : Count[i % 2],
-    Standard : Standard[i % 2],
-    Mode : Mode[i % 2],
-    TotalPrice : TotalPrice[i % 2],
+    Project: Project[i % 2],
+    Name: Name[i % 3],
+    Price: Price[i % 2],
+    Count: Count[i % 2],
+    Standard: Standard[i % 2],
+    Mode: Mode[i % 2],
+    TotalPrice: TotalPrice[i % 2],
 
     key: i,
     disabled: i % 6 === 0,

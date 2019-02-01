@@ -43,12 +43,17 @@ export default [
       },
 
       {
-        path:'/_dashboard',
-        icon:'dashboard',
-        name:'_dashboard',
-        component:'./_Dashboard/mainpage',
+        path: '/_dashboard',
+        icon: 'dashboard',
+        name: '_dashboard',
+        component: './_Dashboard/mainpage',
       },
-
+      {
+        path: '/_goods',
+        icon: 'cloud',
+        name: 'goods',
+        component: './_Goods/DressA',
+      },
       {
         path: '/image',
         icon: 'form',
@@ -108,41 +113,41 @@ export default [
             ],
           },
           {
-            path: '/_User1/settings',
-            name: 'settingsssssss',
+            path: '/_user1/settings',
+            name: 'settings',
             component: './_User1/Settings/Info',
             routes: [
               {
-                path: '/_User1/settings',
-                redirect: '/_User1/settings/base',
+                path: '/_user1/settings',
+                redirect: '/_user1/settings/base',
               },
               {
                 icon: 'cloud',
-                path: '/_User1/settings/base',
+                path: '/_user1/settings/base',
                 component: './_User1/Settings/BaseView',
               },
               {
-                path: '/_User1/settings/myaccount',
+                path: '/_user1/settings/myaccount',
                 component: './_User1/Settings/MyAccount',
               },
               {
-                path: '/_User1/settings/mydata',
+                path: '/_user1/settings/mydata',
                 component: './_User1/Settings/MyData',
               },
               {
-                path: '/_User1/settings/security',
+                path: '/_user1/settings/security',
                 component: './_User1/Settings/SecurityView',
               },
               {
-                path: '/_User1/settings/binding',
+                path: '/_user1/settings/binding',
                 component: './_User1/Settings/BindingView',
               },
               {
-                path: '/_User1/settings/address',
+                path: '/_user1/settings/address',
                 component: './_User1/Settings/AddressView',
               },
               {
-                path: '/_User1/settings/notification',
+                path: '/_user1/settings/notification',
                 component: './_User1/Settings/NotificationView',
               },
             ],

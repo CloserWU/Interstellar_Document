@@ -23,7 +23,6 @@ import Result from '@/components/Result';
 
 import styles from './MyData.less';
 
-
 const FormItem = Form.Item;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
@@ -148,7 +147,15 @@ class MyData extends PureComponent {
       <div className={styles.listContent}>
         <div className={styles.listContentItem} />
         <div className={styles.listContentItem}>
-          {i === "0" ? <a href={href}><span>默认数据</span></a> : <a href={href}><span>设为默认</span></a>}
+          {i === '0' ? (
+            <a href={href}>
+              <span>默认数据</span>
+            </a>
+          ) : (
+            <a href={href}>
+              <span>设为默认</span>
+            </a>
+          )}
         </div>
         <div className={styles.listContentItem} />
       </div>
@@ -169,17 +176,15 @@ class MyData extends PureComponent {
     );
 
     const fenjie = (mydata, i) => {
-      if(mydata instanceof Array){
-        if(mydata.length !== 0){
-          if(i === 0){
-            console.log('11111')
+      if (mydata instanceof Array) {
+        if (mydata.length !== 0) {
+          if (i === 0) {
+            console.log('11111');
           }
           return mydata[i];
         }
       }
       return '';
-
-
     };
 
     const getModalContent = () => {
@@ -202,14 +207,18 @@ class MyData extends PureComponent {
         <div>
           <Row type="flex" justify="space-around" align="middle">
             <Col span={12}>
-              <img className={styles.img} src="https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png" width='520px' />
+              <img
+                className={styles.img}
+                src="https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png"
+                width="520px"
+              />
             </Col>
             <Col span={12}>
               <Form onSubmit={this.handleSubmit}>
                 <FormItem label="前腰围" {...this.formLayout}>
                   {getFieldDecorator('Mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
-                    initialValue: fenjie(current.Mydata, 3),
+                    initialValue: fenjie(current.Mydata, 0),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
                 <FormItem label="前臀围" {...this.formLayout}>
@@ -254,12 +263,9 @@ class MyData extends PureComponent {
                     initialValue: fenjie(current.Mydata, 7),
                   })(<Input placeholder="请输入" />)}
                 </FormItem>
-
               </Form>
             </Col>
           </Row>
-
-
         </div>
       );
     };

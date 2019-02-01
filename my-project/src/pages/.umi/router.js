@@ -147,6 +147,17 @@ models: () => [
         "exact": true
       },
       {
+        "path": "/_goods",
+        "icon": "cloud",
+        "name": "goods",
+        "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p___Goods__DressA" */'../_Goods/DressA'),
+  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
+}),
+        "exact": true
+      },
+      {
         "path": "/image",
         "icon": "form",
         "name": "image",
@@ -252,8 +263,8 @@ models: () => [
             ]
           },
           {
-            "path": "/_User1/settings",
-            "name": "settingsssssss",
+            "path": "/_user1/settings",
+            "name": "settings",
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -266,13 +277,13 @@ models: () => [
 }),
             "routes": [
               {
-                "path": "/_User1/settings",
-                "redirect": "/_User1/settings/base",
+                "path": "/_user1/settings",
+                "redirect": "/_user1/settings/base",
                 "exact": true
               },
               {
                 "icon": "cloud",
-                "path": "/_User1/settings/base",
+                "path": "/_user1/settings/base",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -286,7 +297,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_User1/settings/myaccount",
+                "path": "/_user1/settings/myaccount",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -300,7 +311,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_User1/settings/mydata",
+                "path": "/_user1/settings/mydata",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -314,7 +325,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_User1/settings/security",
+                "path": "/_user1/settings/security",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -328,7 +339,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_User1/settings/binding",
+                "path": "/_user1/settings/binding",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -342,7 +353,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_User1/settings/address",
+                "path": "/_user1/settings/address",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -356,7 +367,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_User1/settings/notification",
+                "path": "/_user1/settings/notification",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [

@@ -26,7 +26,9 @@ class Info extends Component {
     const { match, location } = props;
     const menuMap = {
       base: <FormattedMessage id="app.settings.menuMap.basic" defaultMessage="Basic Settings" />,
-      myaccount: <FormattedMessage id="app.settings.menuMap.myaccount" defaultMessage="MyAccount" />,
+      myaccount: (
+        <FormattedMessage id="app.settings.menuMap.myaccount" defaultMessage="MyAccount" />
+      ),
       mydata: <FormattedMessage id="app.settings.menuMap.mydata" defaultMessage="MyData" />,
       security: (
         <FormattedMessage id="app.settings.menuMap.security" defaultMessage="Security Settings" />
@@ -85,7 +87,7 @@ class Info extends Component {
   };
 
   selectKey = ({ key }) => {
-    router.push(`/_User1/settings/${key}`);
+    router.push(`/_user1/settings/${key}`);
     this.setState({
       selectKey: key,
     });

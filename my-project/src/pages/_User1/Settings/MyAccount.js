@@ -37,7 +37,7 @@ const getValue = obj =>
     .join(',');
 const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
-const code = ['156149465','17984961'];
+const code = ['156149465', '17984961'];
 
 const CreateForm = Form.create()(props => {
   const { modalVisible, form, handleAdd, handleModalVisible } = props;
@@ -293,7 +293,7 @@ class MyAccount extends PureComponent {
     {
       title: '项目',
       dataIndex: 'Project',
-      render : val => <img src={val} />,
+      render: val => <img src={val} />,
     },
     {
       title: '名称',

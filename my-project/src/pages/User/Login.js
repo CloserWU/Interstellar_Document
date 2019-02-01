@@ -64,19 +64,19 @@ class LoginPage extends Component {
     <Alert style={{ marginBottom: 24 }} message={content} type="error" showIcon />
   );
 
-  handleOk = (e) => {
+  handleOk = e => {
     console.log(e);
     this.setState({
       visible: false,
     });
-  }
+  };
 
-  handleCancel = (e) => {
+  handleCancel = e => {
     console.log(e);
     this.setState({
       visible: false,
     });
-  }
+  };
 
   render() {
     const { login, submitting } = this.props;
@@ -93,7 +93,11 @@ class LoginPage extends Component {
             }}
           >
             <Tab key="qrcoda" tab={formatMessage({ id: 'app.login.qrcode' })}>
-              <img className={styles.img} src="https://github.com/CloserWU/Interstellar_Document/raw/master/image/qrcode.png" width="150px" />
+              <img
+                className={styles.img}
+                src="https://github.com/CloserWU/Interstellar_Document/raw/master/image/qrcode.png"
+                width="150px"
+              />
             </Tab>
             <Tab key="account" tab={formatMessage({ id: 'app.login.tab-login-credentials' })}>
               {login.status === 'error' &&
@@ -143,7 +147,7 @@ class LoginPage extends Component {
                   },
                 ]}
               />
-              <Captcha   // 验证码
+              <Captcha // 验证码
                 name="captcha"
                 placeholder={formatMessage({ id: 'form.verification-code.placeholder' })}
                 countDown={120}
