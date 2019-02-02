@@ -3,6 +3,17 @@
 相信很多小伙伴的Ant Design Pro工程在WebStrom后中增加很多页面和功能后，对怎样发布到服务器上有多疑问。因为这时候又不和后端相连，只是想看看自己加的东西能不能正常在服务器上跑。这时怎么办呢？一个解决办法如下:
 `OS:Centos7`
 
+把除了`node_modules`文件夹外的所有文件都传到服务器上，然后运行`npm install`，下载好后，直接访问`ip:8000`就行，前提是要把服务器对8000端口的防火墙关闭，这个可以在阿里云控制台调。
+
+<font color='red'>
+**以下的不要看，完全是误导人的，因为我太菜了....**
+===
+</font>
+
+---
+---
+---
+<br/>
 
 **其实很简单，就是克隆一份工程文件，记得是带有`node_modules`的整个项目，然后统统	扔到服务器上，然后`npm start`跑起来，再在`nginx`配置文件中，`proxy_pass `代理到`localhost:8000`，就大功告成了。**
 
@@ -46,6 +57,7 @@ service nginx start
 service nginx reload
 ```
 然后浏览器访问`IP`即可。
+
 
 ## 附
 ---
@@ -105,28 +117,27 @@ n latest
 很尬的一点是，`npm start`也就是8000端口没法在后台运行，只要XShell关闭，8000端口就关闭了，这时80端口也访问不到了.....  
 虽然整个过程的意义不大，但是......没有什么好但是的，就是意义不大（逃🏃‍♂️
 
+
 **更新**
 
----
-`npm start`可以后台运行👏
+----
+`npm start`可以后台运行👏  
 ```shell
 which nohup
-yum provides */nohup # 没有的话就下载
+yum provides */nohup  # 没有的话安装
 cd ~
 vim .bash_profile
 # 在PATH=$PATH:$HOME/bin后面加上which nohup的地址
-PATH=$PATH:$HOME/bin:/usr/bin/nohup 
+PATH=$PATH:$HOME/bin:/usr/bin/nohup
 source ~/.bash_profile
 cd /path/to/your/project
 nohup npm start &
-exit # 退出账户
 ```
-
 参考资料：
 https://blog.csdn.net/chanlingmai5374/article/details/80762983
 https://blog.csdn.net/qq_27384769/article/details/78849930
 
-附：
+附
 ```shell
 netstat -ntlp | grep 80 查看端口占用情况
 
