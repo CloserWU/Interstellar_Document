@@ -88,7 +88,8 @@ export default [
         name: '个人中心',
         icon: 'user',
         routes: [
-          /*{
+          /*
+          {
             path: '/_User1/center',
             name: 'center',
             component: './_User1/Center/Center',

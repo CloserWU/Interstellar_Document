@@ -61,6 +61,7 @@
       <change beforePath="$PROJECT_DIR$/mock/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/mock/profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mock/rule.js" beforeDir="false" afterPath="$PROJECT_DIR$/mock/rule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mock/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/mock/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleListContent/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleListContent/index.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GlobalFooter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalFooter/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GlobalFooter/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalFooter/index.less" afterDir="false" />
@@ -100,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/_Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1767">
+            <state>
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -108,14 +109,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layouts/UserLayout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="110" column="21" lean-forward="true" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+            <state relative-caret-position="152">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/router.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="96" column="15" lean-forward="true" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -195,13 +205,13 @@
         <option value="$PROJECT_DIR$/src/components/Goods/index.js" />
         <option value="$PROJECT_DIR$/src/components/Goods/index.less" />
         <option value="$PROJECT_DIR$/src/components/SiderMenu/index.less" />
-        <option value="$PROJECT_DIR$/config/router.config.js" />
         <option value="$PROJECT_DIR$/src/pages/_User1/Settings/Info.js" />
         <option value="$PROJECT_DIR$/src/layouts/UserLayout.js" />
+        <option value="$PROJECT_DIR$/config/router.config.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="375" />
     <option name="y" value="180" />
     <option name="width" value="1460" />
@@ -213,7 +223,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,6 +275,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,16 +373,16 @@
       <workItem from="1548984111498" duration="8418000" />
       <workItem from="1549004055021" duration="5200000" />
       <workItem from="1549068585854" duration="5357000" />
-      <workItem from="1549081389302" duration="7438000" />
+      <workItem from="1549081389302" duration="8821000" />
+      <workItem from="1549110659305" duration="996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174177000" />
+    <option name="totallyTimeSpent" value="176556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2014531" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -380,7 +390,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993395" visible="true" weight="0.20530726" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993395" weight="0.2611732" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,7 +398,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24860336" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2472067" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5006605" side_tool="true" weight="0.24022347" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32960895" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -780,32 +790,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/router.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="153" column="18" lean-forward="true" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/assets/logo.svg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/_Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1767">
+        <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/logo.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/UserLayout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="110" column="21" lean-forward="true" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/router.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="96" column="15" lean-forward="true" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
         </state>
       </provider>
     </entry>
