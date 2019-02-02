@@ -61,6 +61,18 @@ const user = [
   '仲尼',
 ];
 
+const DressAtitle = [
+  '波点棉质包臀鱼尾裙',
+  '蕾丝拼接纯棉包臀鱼尾裙',
+  '多色及膝高腰通勤鱼尾裙',
+  '双层斜摆雪纺飘逸鱼尾裙',
+  '大波浪宽松休闲鱼尾裙',
+  '优雅高腰紧身铅笔鱼尾裙',
+  '不规则宽松休闲波浪鱼尾裙',
+  '挺括及膝鱼尾裙',
+  '休闲宽松甜美波浪鱼尾裙',
+];
+
 const Addname = ['aaa', 'bbb', 'ccc', 'ddd', 'fff'];
 
 const Addtelnum = ['110', '119', '120', '114', '159'];
@@ -75,6 +87,17 @@ const myData = [
   ['122', '21', '32', '44', '53', '62', '44', '55'],
 ];
 
+const Sales = [
+  '120','1234','723','543','63','5512','348','857','60','11209',
+];
+
+const Shops = [
+  'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
+  'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
+  'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
+  "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+];
+
 function fakeList(count) {
   const list = [];
   for (let i = 0; i < count; i += 1) {
@@ -87,6 +110,9 @@ function fakeList(count) {
       Mydata: myData[i % 3],
       geographic1: geographic1[i % 5],
       owner: user[i % 10],
+      dresstitle: DressAtitle[i % 9],
+      sales: Sales[i % 10],
+      shops: Shops[i % 4],
       title: titles[i % 8],
       avatar: avatars[i % 8],
       cover: parseInt(i / 4, 10) % 2 === 0 ? covers[i % 4] : covers[3 - (i % 4)],

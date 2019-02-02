@@ -45,16 +45,16 @@ export default [
       {
         path: '/_dashboard',
         icon: 'dashboard',
-        name: '_dashboard',
+        name: '主页',
         component: './_Dashboard/mainpage',
       },
       {
         path: '/_goods',
         icon: 'cloud',
-        name: 'goods',
+        name: '商品',
         component: './_Goods/DressA',
       },
-      {
+      /*{
         path: '/image',
         icon: 'form',
         name: 'image',
@@ -69,26 +69,26 @@ export default [
             component: './Images/Image',
           },
         ],
-      },
+      },*/
       {
         path: '/AboutMC',
         icon: 'form',
-        name: 'MC',
+        name: '关于MC',
         component: './_AboutMC/MC',
       },
-      {
+      /*{
         path: '/_User',
         icon: 'form',
         name: '_User',
         component: './_User/UserInfo',
-      },
+      },*/
 
       {
         path: '/_User1',
-        name: '_User1',
+        name: '个人中心',
         icon: 'user',
         routes: [
-          {
+          /*{
             path: '/_User1/center',
             name: 'center',
             component: './_User1/Center/Center',
@@ -111,7 +111,7 @@ export default [
                 component: './_User1/Center/Projects',
               },
             ],
-          },
+          },*/
           {
             path: '/_user1/settings',
             name: 'settings',
@@ -135,6 +135,11 @@ export default [
                 component: './_User1/Settings/MyData',
               },
               {
+                path: '/_user1/settings/address',
+                component: './_User1/Settings/AddressView',
+              },
+              /*
+              {
                 path: '/_user1/settings/security',
                 component: './_User1/Settings/SecurityView',
               },
@@ -142,19 +147,17 @@ export default [
                 path: '/_user1/settings/binding',
                 component: './_User1/Settings/BindingView',
               },
-              {
-                path: '/_user1/settings/address',
-                component: './_User1/Settings/AddressView',
-              },
+
               {
                 path: '/_user1/settings/notification',
                 component: './_User1/Settings/NotificationView',
-              },
+              },*/
             ],
           },
         ],
       },
       // forms
+      /*
       {
         path: '/form',
         icon: 'cloud',
@@ -367,7 +370,7 @@ export default [
             ],
           },
         ],
-      },
+      },*/
       {
         component: '404',
       },

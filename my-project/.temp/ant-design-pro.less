@@ -983,6 +983,10 @@
   vertical-align: middle;
 }
 
+.antd-pro-components-goods-index-h3 {
+  margin-bottom: 50px;
+}
+
 .antd-pro-components-goods-index-button {
   text-align: right;
   vertical-align: middle;
@@ -1741,7 +1745,7 @@
   height: @nav-header-height;
   line-height: @nav-header-height;
   left: 0; //154px
-  background: #ff4000;
+  background: #fff; // 自己加入的item颜色
 }
 
 .drawer .drawer-content {
@@ -2207,13 +2211,57 @@
 
 /* 
   Convert to from  src/undefined
- */
-.antd-pro-pages-_-goods-dress-a-card {
-  text-align: center;
-  vertical-align: middle;
-}
-.antd-pro-pages-_-goods-dress-a-page {
-  text-align: right;
+
+    */
+
+.antd-pro-pages-_-goods-dress-a-coverCardList {
+  margin-bottom: -24px;
+
+  .antd-pro-pages-_-goods-dress-a-card {
+    .ant-card-meta-title {
+      margin-bottom: 4px;
+      & > a {
+        color: @heading-color;
+        display: inline-block;
+        max-width: 100%;
+      }
+    }
+    .ant-card-meta-description {
+      height: 44px;
+      line-height: 22px;
+      overflow: hidden;
+    }
+
+    &:hover {
+      .ant-card-meta-title > a {
+        color: @primary-color;
+      }
+    }
+  }
+
+  .antd-pro-pages-_-goods-dress-a-cardItemContent {
+    // text-align: center;
+    vertical-align: middle;
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: -4px;
+    line-height: 20px;
+    height: 20px;
+    & > span {
+      color: @text-color-secondary;
+      flex: 1;
+      font-size: 12px;
+    }
+    .antd-pro-pages-_-goods-dress-a-avatarList {
+      flex: 0 1 auto;
+    }
+  }
+  .antd-pro-pages-_-goods-dress-a-cardList {
+    margin-top: 24px;
+  }
+  .ant-list .ant-list-item-content-single {
+    max-width: 100%;
+  }
 }
 
 /* 

@@ -12,10 +12,10 @@ const Icons = {
   base: <Icon type="cloud" />,
   myaccount: <Icon type="user" />,
   mydata: <Icon type="user" />,
-  security: <Icon type="form" />,
-  binding: <Icon type="table" />,
   address: <Icon type="sync" />,
-  notification: <Icon type="github" />,
+  /* security: <Icon type="form" />,
+  binding: <Icon type="table" />,
+  notification: <Icon type="github" />, */
 };
 @connect(({ user }) => ({
   currentUser: user.currentUser,
@@ -30,19 +30,19 @@ class Info extends Component {
         <FormattedMessage id="app.settings.menuMap.myaccount" defaultMessage="MyAccount" />
       ),
       mydata: <FormattedMessage id="app.settings.menuMap.mydata" defaultMessage="MyData" />,
-      security: (
+      address: <FormattedMessage id="app.settings.menuMap.address" defaultMessage="Address" />,
+      /* security: (
         <FormattedMessage id="app.settings.menuMap.security" defaultMessage="Security Settings" />
       ),
       binding: (
         <FormattedMessage id="app.settings.menuMap.binding" defaultMessage="Account Binding" />
       ),
-      address: <FormattedMessage id="app.settings.menuMap.address" defaultMessage="Address" />,
       notification: (
         <FormattedMessage
           id="app.settings.menuMap.notification"
           defaultMessage="New Message Notification"
         />
-      ),
+      ), */
     };
     const key = location.pathname.replace(`${match.path}/`, '');
     this.state = {
