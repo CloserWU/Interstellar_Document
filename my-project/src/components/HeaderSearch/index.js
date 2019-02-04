@@ -27,7 +27,7 @@ export default class HeaderSearch extends PureComponent {
     className: '',
     placeholder: '',
     dataSource: [],
-    defaultOpen: false,
+    defaultOpen: false,  // 原为 false
     onVisibleChange: () => {},
   };
 
@@ -86,7 +86,7 @@ export default class HeaderSearch extends PureComponent {
 
   leaveSearchMode = () => {
     this.setState({
-      searchMode: false,
+      searchMode: false,  // 原为 false
       value: '',
     });
   };

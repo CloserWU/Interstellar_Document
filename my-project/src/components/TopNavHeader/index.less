@@ -1,7 +1,7 @@
 @import '~antd/lib/style/themes/default.less';
 
 .head {
-  width: 100%;
+  // width: 100%;
   transition: background 0.3s, width 0.2s;
   height: 128px; //@layout-header-height定义的是64px。
   //起始之前调header第二行缩进的所有工作都没有找对方向
@@ -37,9 +37,12 @@
       width: 324px;
     }
     .menu {
-      display: flex;
-      border: 150px;
-      position: relative;
+      //display: flex;
+      //border: 150px;
+      //position: relative;
+      border: none;
+      height: @layout-header-height;
+      line-height: @layout-header-height;
     }
   }
 }

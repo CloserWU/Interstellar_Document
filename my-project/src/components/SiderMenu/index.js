@@ -9,7 +9,7 @@ const SiderMenuWrapper = React.memo(props => {
   return isMobile ? (
     <Drawer
       visible={!collapsed}
-      placement="center"
+      placement="left"  // 我的是center
       onClose={() => onCollapse(true)}
       style={{
         padding: 0,

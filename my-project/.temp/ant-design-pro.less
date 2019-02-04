@@ -90,7 +90,7 @@
       & > em {
         display: block;
         margin-left: 0;
-        margin-top: 100px;
+        margin-top: 8px;
       }
     }
   }
@@ -844,7 +844,7 @@
 .antd-pro-components-global-header-index-header {
   height: @layout-header-height; //@layout-header-height
   padding: 0;
-  background: #61dafb;
+  background: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   position: relative;
 }
@@ -865,7 +865,7 @@
 
 .antd-pro-components-global-header-index-menu {
   :global(.anticon) {
-    margin-right: 80px;
+    margin-right: 8px;
   }
   :global(.ant-dropdown-menu-item) {
     min-width: 160px;
@@ -963,10 +963,6 @@
       }
     }
   }
-}
-
-.antd-pro-components-global-header-index-search1 {
-  width: 650px;
 }
 
 /* 
@@ -1302,8 +1298,7 @@
   */
 
 .antd-pro-components-page-header-index-pageHeader {
-  margin-top: 70px;
-  background: #ffffff; //@component-background;
+  background: #fff; //@component-background;
   padding: 16px 32px 0 32px;
   border-bottom: @border-width-base @border-style-base @border-color-split;
   .antd-pro-components-page-header-index-wide {
@@ -1337,7 +1332,7 @@
     margin-right: 16px;
     padding-top: 1px;
     > img {
-      width: 500px;
+      width: 28px;
       height: 28px;
       border-radius: @border-radius-base;
       display: block;
@@ -1685,7 +1680,7 @@
   line-height: @nav-header-height;
   padding-left: (@menu-collapsed-width - 32px) / 2;
   transition: all 0.3s;
-  background: #2eabff;
+  background: #002140;
   overflow: hidden;
   img {
     display: inline-block;
@@ -1702,20 +1697,20 @@
     font-weight: 600;
   }
 }
-
 .antd-pro-components-sider-menu-index-sider {
   //竖版时的左边界  //横板的左边界在TopNavHeader.less里调
   min-height: 100vh;
   box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
-  position: Fixed;
+  position: relative;
   z-index: 10;
   &.antd-pro-components-sider-menu-index-fixSiderbar {
+    box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
     position: fixed;
     top: 0;
     left: 0;
     :global(.ant-menu-root) {
       overflow-y: auto;
-      left: 90px;
+      // left: 90px;
       height: ~"calc(100vh - @{nav-header-height})";
     }
   }
@@ -1730,7 +1725,6 @@
       }
     }
     :global(.ant-menu-light) {
-      left: 90px;
       border-right-color: transparent;
     }
   }
@@ -1744,12 +1738,11 @@
 .top-nav-menu li.ant-menu-item {
   height: @nav-header-height;
   line-height: @nav-header-height;
-  left: 0; //154px
   background: #fff; // 自己加入的item颜色
 }
 
 .drawer .drawer-content {
-  background: #2eabff;
+  background: #002140;
 }
 
 .ant-menu-inline-collapsed {
@@ -1761,12 +1754,9 @@
     .sider-menu-item-img
     + span,
   & > .ant-menu-submenu > .ant-menu-submenu-title .sider-menu-item-img + span {
-    border-bottom: 1px;
-    border-right: 90px;
     max-width: 0;
     display: inline-block;
     opacity: 0;
-    background: chartreuse;
   }
 }
 
@@ -1895,13 +1885,13 @@
   }
 }
 
-/*
+/* 
   Convert to from  src/undefined
 
   */
 
 .antd-pro-components-top-nav-header-index-head {
-  width: 100%;
+  // width: 100%;
   transition: background 0.3s, width 0.2s;
   height: 128px; //@layout-header-height定义的是64px。
   //起始之前调header第二行缩进的所有工作都没有找对方向
@@ -1935,9 +1925,12 @@
       width: 324px;
     }
     .antd-pro-components-top-nav-header-index-menu {
-      display: flex;
-      border: 150px;
-      position: relative;
+      //display: flex;
+      //border: 150px;
+      //position: relative;
+      border: none;
+      height: @layout-header-height;
+      line-height: @layout-header-height;
     }
   }
 }

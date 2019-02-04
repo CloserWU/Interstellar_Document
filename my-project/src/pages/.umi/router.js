@@ -169,12 +169,12 @@ models: () => [
         "exact": true
       },
       {
-        "path": "/_User1",
+        "path": "/account",
         "name": "个人中心",
         "icon": "user",
         "routes": [
           {
-            "path": "/_user1/settings",
+            "path": "/account/settings",
             "name": "settings",
             "component": _dvaDynamic({
   app: window.g_app,
@@ -188,13 +188,13 @@ models: () => [
 }),
             "routes": [
               {
-                "path": "/_user1/settings",
-                "redirect": "/_user1/settings/base",
+                "path": "/account/settings",
+                "redirect": "/account/settings/base",
                 "exact": true
               },
               {
                 "icon": "cloud",
-                "path": "/_user1/settings/base",
+                "path": "/account/settings/base",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -208,7 +208,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_user1/settings/myaccount",
+                "path": "/account/settings/myaccount",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -222,7 +222,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_user1/settings/mydata",
+                "path": "/account/settings/mydata",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
@@ -236,7 +236,7 @@ models: () => [
                 "exact": true
               },
               {
-                "path": "/_user1/settings/address",
+                "path": "/account/settings/address",
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [

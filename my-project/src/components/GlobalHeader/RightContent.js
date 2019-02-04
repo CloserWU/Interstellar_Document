@@ -90,14 +90,16 @@ export default class GlobalHeaderRight extends PureComponent {
       skeletonCount,
       theme,
     } = this.props;
+    //         在Menu的第一个元素
+    //         <Menu.Item key="userCenter">
+    //           <Icon type="user" />
+    //           <FormattedMessage id="menu.account.center" defaultMessage="account center" />
+    //         </Menu.Item>
     const menu = (
       <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-        <Menu.Item key="userCenter">
-          <Icon type="user" />
-          <FormattedMessage id="menu.account.center" defaultMessage="account center" />
-        </Menu.Item>
+
         <Menu.Item key="userinfo">
-          <Icon type="setting" />
+          <Icon type="user" />
           <FormattedMessage id="menu.account.settings" defaultMessage="account settings" />
         </Menu.Item>
         <Menu.Item key="triggerError">
@@ -124,13 +126,7 @@ export default class GlobalHeaderRight extends PureComponent {
     }
     return (
       <div className={className}>
-        <Search
-          className={styles.search1}
-          placeholder="input search text"
-          enterButton="Search"
-          size="large"
-          onSearch={value => console.log(value)}
-        />
+
         <HeaderSearch
           className={`${styles.action} ${styles.search}`}
           placeholder={formatMessage({ id: 'component.globalHeader.search' })}

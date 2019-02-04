@@ -84,7 +84,7 @@ export default [
       },*/
 
       {
-        path: '/_User1',
+        path: '/account',
         name: '个人中心',
         icon: 'user',
         routes: [
@@ -114,29 +114,29 @@ export default [
             ],
           },*/
           {
-            path: '/_user1/settings',
+            path: '/account/settings',
             name: 'settings',
             component: './_User1/Settings/Info',
             routes: [
               {
-                path: '/_user1/settings',
-                redirect: '/_user1/settings/base',
+                path: '/account/settings',
+                redirect: '/account/settings/base',
               },
               {
                 icon: 'cloud',
-                path: '/_user1/settings/base',
+                path: '/account/settings/base',
                 component: './_User1/Settings/BaseView',
               },
               {
-                path: '/_user1/settings/myaccount',
+                path: '/account/settings/myaccount',
                 component: './_User1/Settings/MyAccount',
               },
               {
-                path: '/_user1/settings/mydata',
+                path: '/account/settings/mydata',
                 component: './_User1/Settings/MyData',
               },
               {
-                path: '/_user1/settings/address',
+                path: '/account/settings/address',
                 component: './_User1/Settings/AddressView',
               },
               /*
