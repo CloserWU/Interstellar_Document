@@ -30,7 +30,7 @@
       transition: all 0.3s;
 
       &:not(:last-child) {
-        margin-right: 200px;
+        margin-right: 4%;
       }
 
       &:hover {
@@ -52,4 +52,24 @@
   margin-left: 10px;
   margin-right: 10px;
   width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+
+  .links1 {
+    margin-bottom: 8px;
+
+    a {
+      color: @text-color-secondary;
+      transition: all 0.3s;
+
+      &:not(:last-child) {
+        margin-right: 2px;
+      }
+
+      &:hover {
+        color: @text-color;
+      }
+    }
+  }
 }
