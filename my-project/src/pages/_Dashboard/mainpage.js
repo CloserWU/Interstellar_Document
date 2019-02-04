@@ -31,19 +31,17 @@ class mainpage extends Component {
             <h3 className={styles.h3}>4</h3>
           </div>
         </Carousel>
-        <Row>
-          <Col span={12}>
+        <Row gutter={24} type="flex" align="middle">
+          <Col lg={12} xs={12}>
             <img
               className={styles.img1}
               src="https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png"
-              width={128}
             />
           </Col>
-          <Col span={12}>
+          <Col lg={12} xs={12}>
             <img
               className={styles.img1}
               src="https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png"
-              width={128}
             />
           </Col>
         </Row>
@@ -53,33 +51,29 @@ class mainpage extends Component {
         <Card className={styles.card1}>
           <h3 className={styles.h3}>潮流裙装</h3>
         </Card>
-        <Row>
-          <Col span={6}>
+        <Row gutter={4} type="flex" align="middle" justify="space-around">
+          <Col lg={6} xs={6}>
             <img
               className={styles.img2}
               src="https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png"
-              width={128}
             />
           </Col>
-          <Col span={6}>
+          <Col lg={6} xs={6}>
             <img
               className={styles.img2}
               src="https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png"
-              width={128}
             />
           </Col>
-          <Col span={6}>
+          <Col lg={6} xs={6}>
             <img
               className={styles.img2}
               src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-              width={128}
             />
           </Col>
-          <Col span={6}>
+          <Col lg={6} xs={6}>
             <img
               className={styles.img2}
               src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png"
-              width={128}
             />
           </Col>
         </Row>
