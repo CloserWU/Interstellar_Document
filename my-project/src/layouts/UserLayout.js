@@ -113,17 +113,16 @@ class UserLayout extends React.PureComponent {
             <div className={styles.desc}>MC 是西湖区最具影响力的 服装样板设计 平台</div>
           </div>
           <Card className={styles.card}>
-            <Row type="flex" justify="center" align="middle">
-              <Col span={12}>
-                <div>
+            <Row align="middle" type="flex">
+              <Col lg={12} md={12} xs={0}>
+                <div className={styles.div}>
                   <h1 className={styles.h1}>个性化定制</h1>
                   <hr className={styles.divider} />
-
                   <h2 className={styles.h1}>让购物车里的衣服</h2>
                   <h2 className={styles.h1}>比以往更了解你</h2>
                 </div>
               </Col>
-              <Col span={12}>
+              <Col lg={12} md={12} xs={24}>
                 <div>{children}</div>
               </Col>
             </Row>

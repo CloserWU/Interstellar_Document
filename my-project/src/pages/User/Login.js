@@ -92,13 +92,6 @@ class LoginPage extends Component {
               this.loginForm = form;
             }}
           >
-            <Tab key="qrcoda" tab={formatMessage({ id: 'app.login.qrcode' })}>
-              <img
-                className={styles.img}
-                src="https://github.com/CloserWU/Interstellar_Document/raw/master/image/qrcode.png"
-                width="150px"
-              />
-            </Tab>
             <Tab key="account" tab={formatMessage({ id: 'app.login.tab-login-credentials' })}>
               {login.status === 'error' &&
                 login.type === 'account' &&

@@ -19,12 +19,11 @@
 }
 
 .content {
-  padding: 32px 0;
-  margin-left: 0px;
+  // padding: 32px 0;
   flex: 1;
 }
 
-@media (min-width: @screen-md-min) {
+@media (min-width: 500px) {  //屏幕宽度大于768px后，采用@media里的样式@screen-md-min
   .container {
     // background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');  // 背景
     background-repeat: no-repeat;
@@ -35,28 +34,39 @@
   .content {
     padding: 32px 0 24px 0;
   }
+
+  .div {
+    .divider {
+      text-align: center;
+      vertical-align: middle;
+      height: 2px;
+      //margin-left: 300px;
+      width: 170px;
+      background-color: red;
+    }
+    .h1 {
+      text-align: center;
+      vertical-align: middle;
+      //margin-left: 300px;
+      color: #ff9797;
+    }
+
+  }
 }
 
 .top {
-  margin-left: 300px;
+  margin-left: 20%;
+  vertical-align: middle;
   text-align: left;
 }
 
-.divider {
-  height: 2px;
-  margin-left: 300px;
-  width: 170px;
-  background-color: red;
-}
 
 .card {
   background-color: #ffecec;
 }
 
-.h1 {
-  margin-left: 300px;
-  color: #ff9797;
-}
+
+
 
 .header {
   height: 44px;
@@ -65,7 +75,6 @@
     text-decoration: none;
   }
 }
-
 .logo {
   height: 44px;
   vertical-align: top;
