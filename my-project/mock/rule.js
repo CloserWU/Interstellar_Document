@@ -13,7 +13,7 @@ const Project = [
 const Price = ['276.13', '325.00'];
 const Count = ['1', '2'];
 const Standard = ['黑.L', '白.M'];
-const Mode = ['已选择', '不需要定制'];
+const Mode = ['已选择定制', '不需要定制'];
 const TotalPrice = ['286.13', '325.00'];
 
 // mock tableListDataSource

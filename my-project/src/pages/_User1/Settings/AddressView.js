@@ -244,9 +244,8 @@ class AddressView extends PureComponent {
           <Card
             className={styles.listCard}
             bordered={false}
-            title="收货地址列表"
             style={{ marginTop: 24 }}
-            bodyStyle={{ padding: '0 32px 40px 32px' }}
+            bodyStyle={{ padding: '0 0px 40px 0px' }}   // padding 上 右 下 左
             extra={extraContent}
           >
             <Button

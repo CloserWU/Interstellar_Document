@@ -37,8 +37,8 @@ class MyData extends PureComponent {
   state = { visible: false, done: false };
 
   formLayout = {
-    labelCol: { span: 7 },
-    wrapperCol: { span: 13 },
+    labelCol: { lg: {span :7},  xs: {span :7}, xxs: {span: 7} },
+    wrapperCol: { lg: {span :13},  xs: {span :7}, xxs: {span: 7} },
   };
 
   componentDidMount() {
@@ -206,15 +206,16 @@ class MyData extends PureComponent {
       return (
         <div>
           <Row type="flex" justify="space-around" align="middle">
-            <Col span={12}>
+            <Col xl={12} lg={12} md={12} sm={12} xs={20}>
               <img
                 className={styles.img}
+                alt=''
                 src="https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png"
-                width="520px"
+                // width={520}
               />
             </Col>
-            <Col span={12}>
-              <Form onSubmit={this.handleSubmit}>
+            <Col xl={12} lg={12} md={12} sm={12} xs={20}>
+              <Form onSubmit={this.handleSubmit} layout='horizontal'>
                 <FormItem label="前腰围" {...this.formLayout}>
                   {getFieldDecorator('Mydata', {
                     rules: [{ required: true, message: '请输入任务名称' }],
@@ -277,12 +278,12 @@ class MyData extends PureComponent {
             className={styles.listCard}
             bordered={false}
             style={{ marginTop: 24 }}
-            bodyStyle={{ padding: '0 32px 40px 32px' }}
+            bodyStyle={{ padding: '0 0px 40px 0px' }}
             extra={extraContent}
           >
             <Button
               type="Primary"
-              style={{ width: '20%', marginBottom: 8 }}
+              style={{ width: '30%', marginBottom: 8 }}
               icon="plus"
               onClick={this.showModal}
               ref={component => {
@@ -362,7 +363,7 @@ class MyData extends PureComponent {
           centered="true"
           title={done ? null : `数据${current ? '编辑' : '添加'}`}
           className={styles.standardListForm}
-          width={1080}
+          width='80%'
           bodyStyle={done ? { padding: '72px 0' } : { padding: '28px 0 0' }}
           destroyOnClose
           visible={visible}

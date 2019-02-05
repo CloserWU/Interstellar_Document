@@ -119,7 +119,7 @@ class Info extends Component {
     }
     const { mode, selectKey } = this.state;
     return (
-      <PageHeaderWrapper>
+
         <GridContent>
           <div
             className={styles.main}
@@ -138,7 +138,7 @@ class Info extends Component {
             </div>
           </div>
         </GridContent>
-      </PageHeaderWrapper>
+
     );
   }
 }

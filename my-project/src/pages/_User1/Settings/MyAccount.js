@@ -293,7 +293,7 @@ class MyAccount extends PureComponent {
     {
       title: '项目',
       dataIndex: 'Project',
-      render: val => <img src={val} />,
+      render: val => <img alt='' src={val} />,
     },
     {
       title: '名称',
@@ -324,13 +324,20 @@ class MyAccount extends PureComponent {
     },
     {
       title: '定制',
-      render: (text, record) => (
-        <Fragment>
-          <a onClick={() => this.handleUpdateModalVisible(true, record)}>定制</a>
-          <Divider type="vertical" />
-          <a href="">身体数据</a>
-        </Fragment>
-      ),
+      dataIndex: 'Mode',
+      render(val, record) {// val 要放在第一个！！
+        return (
+          (val.toString() === '已选择定制') ? (
+            <div>
+              <a onClick={() => this.handleUpdateModalVisible(true, record)}>{val}</a>
+            </div>) : (<a href=''>不需要定制</a>)
+        );
+      },
+      //         <Fragment>
+      //           <a onClick={() => this.handleUpdateModalVisible(true, record)}>定制</a>
+      //           <Divider type="vertical" />
+      //           <a href="">身体数据</a>
+      //         </Fragment>
     },
     {
       title: '总价',
@@ -627,34 +634,32 @@ class MyAccount extends PureComponent {
     };
     return (
       <div>
-        <Card bordered={false}>
-          <div className={styles.tableList}>
-            <div className={styles.tableListForm}>{this.renderForm()}</div>
-            <div className={styles.tableListOperator}>
-              <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>
-                新建
-              </Button>
-              {selectedRows.length > 0 && (
-                <span>
-                  <Button>批量操作</Button>
-                  <Dropdown overlay={menu}>
-                    <Button>
-                      更多操作 <Icon type="down" />
-                    </Button>
-                  </Dropdown>
-                </span>
-              )}
-            </div>
-            <StandardTable
-              selectedRows={selectedRows}
-              loading={loading}
-              data={data}
-              columns={this.columns}
-              onSelectRow={this.handleSelectRows}
-              onChange={this.handleStandardTableChange}
-            />
+        <div className={styles.tableList}>
+          <div className={styles.tableListForm}>{this.renderForm()}</div>
+          <div className={styles.tableListOperator}>
+            <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>
+              新建
+            </Button>
+            {selectedRows.length > 0 && (
+              <span>
+                <Button>批量操作</Button>
+                <Dropdown overlay={menu}>
+                  <Button>
+                    更多操作 <Icon type="down" />
+                  </Button>
+                </Dropdown>
+              </span>
+            )}
           </div>
-        </Card>
+          <StandardTable
+            selectedRows={selectedRows}
+            loading={loading}
+            data={data}
+            columns={this.columns}
+            onSelectRow={this.handleSelectRows}
+            onChange={this.handleStandardTableChange}
+          />
+        </div>
         <CreateForm {...parentMethods} modalVisible={modalVisible} />
         {stepFormValues && Object.keys(stepFormValues).length ? (
           <UpdateForm
