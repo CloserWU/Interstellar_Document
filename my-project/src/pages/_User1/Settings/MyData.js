@@ -145,7 +145,7 @@ class MyData extends PureComponent {
 
     const ListContent = ({ data: { i, href } }) => (
       <div className={styles.listContent}>
-        <div className={styles.listContentItem} />
+
         <div className={styles.listContentItem}>
           {i === '0' ? (
             <a href={href}>

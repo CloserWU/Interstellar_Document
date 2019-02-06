@@ -49,13 +49,14 @@
     }
   }
   .listContent {
+    text-align: center;
     font-size: 0;
     .listContentItem {
       color: @text-color-secondary;
       display: inline-block;
       vertical-align: middle;
       font-size: @font-size-base;
-      margin-left: 40px;
+      margin-left: 20px;
       > span {
         line-height: 20px;
       }
@@ -74,7 +75,7 @@
     }
   }
   .extraContentSearch {
-    margin-left: 16px;
+    margin-left: 8px;
     width: 272px;
   }
 }
@@ -162,6 +163,7 @@
 @media screen and (max-width: @screen-xl) {
   .standardList {
     .listContent {
+      text-align: center;
       & > div {
         margin-left: 0;
       }
@@ -175,7 +177,7 @@
 @media screen and (max-width: 1400px) {
   .standardList {
     .listContent {
-      text-align: right;
+      text-align: center;
       & > div:last-child {
         top: 0;
       }

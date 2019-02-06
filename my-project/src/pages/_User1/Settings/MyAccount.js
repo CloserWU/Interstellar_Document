@@ -325,12 +325,12 @@ class MyAccount extends PureComponent {
     {
       title: '定制',
       dataIndex: 'Mode',
-      render(val, record) {// val 要放在第一个！！
+      render(val, text, record) {// val 要放在第一个！！
         return (
           (val.toString() === '已选择定制') ? (
-            <div>
-              <a onClick={() => this.handleUpdateModalVisible(true, record)}>{val}</a>
-            </div>) : (<a href=''>不需要定制</a>)
+            <Fragment>
+              <a href=''>{val}</a>
+            </Fragment>) : (<a href=''>不需要定制</a>)
         );
       },
       //         <Fragment>
