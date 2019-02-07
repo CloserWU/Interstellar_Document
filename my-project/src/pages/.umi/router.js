@@ -158,6 +158,17 @@ models: () => [
         "exact": true
       },
       {
+        "path": "/_goods/dressA/:i",
+        "icon": "table",
+        "name": "详情页",
+        "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p___Detail__Detail" */'../_Detail/Detail'),
+  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
+}),
+        "exact": true
+      },
+      {
         "path": "/AboutMC",
         "icon": "form",
         "name": "关于MC",

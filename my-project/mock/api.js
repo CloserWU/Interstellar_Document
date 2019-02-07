@@ -73,6 +73,19 @@ const DressAtitle = [
   '休闲宽松甜美波浪鱼尾裙',
 ];
 
+const DressDescription =[
+  ['面料类型：95%聚酯纤维，5%氨纶',
+    '美人鱼修身铅笔裙设计彰显Feminize元素性感十足',
+    '复古鱼尾下摆打造优雅裙满足您的美人鱼梦想',
+    '凸显内的曲线身材',
+    '123查看尺码'],
+  ['面料类型：95%聚酯纤维，5%氨纶',
+    '美人鱼修身铅笔裙设计彰显Feminize元素性感十足',
+    '复古鱼尾下摆打造优雅裙满足您的美人鱼梦想',
+    '凸显内的曲线身材'],
+];
+
+
 const Addname = ['aaa', 'bbb', 'ccc', 'ddd', 'fff'];
 
 const Addtelnum = ['110', '119', '120', '114', '159'];
@@ -103,6 +116,7 @@ function fakeList(count) {
   for (let i = 0; i < count; i += 1) {
     list.push({
       i: `${i}`,
+      it: i,
       id: `fake-list-${i}`,
       addname: Addname[i % 5],
       addtelnum: Addtelnum[i % 5],
@@ -111,6 +125,7 @@ function fakeList(count) {
       geographic1: geographic1[i % 5],
       owner: user[i % 10],
       dresstitle: DressAtitle[i % 9],
+      dressdescription: DressDescription[i % 2],
       sales: Sales[i % 10],
       shops: Shops[i % 4],
       title: titles[i % 8],

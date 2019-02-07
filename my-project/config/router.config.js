@@ -71,6 +71,12 @@ export default [
         ],
       },*/
       {
+        path: '/_goods/dressA/:i',
+        icon: 'table',
+        name: '详情页',
+        component: './_Detail/Detail',
+      },
+      {
         path: '/AboutMC',
         icon: 'form',
         name: '关于MC',

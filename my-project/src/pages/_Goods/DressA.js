@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import moment from 'moment';
 import { connect } from 'dva';
+import { Link } from 'dva/router';
 import { Row, Col, Form, Card, Select, List, Avatar } from 'antd';
 
 import TagSelect from '@/components/TagSelect';
@@ -77,6 +78,9 @@ class DressA extends PureComponent {
                 title={item.dresstitle}
                 description={<Ellipsis lines={2}><a>我要定制</a></Ellipsis>}
               />
+
+              <Link to={`/_goods/dressA/${item.i}`}>添加用户</Link>
+              <Link to={{pathname:'/_goods/dressA/1',query:item.i}}>添加用户1</Link>
               <div className={styles.cardItemContent}>
                 <span>销量 {item.sales}</span>
                 <div className={styles.avatarList}>
