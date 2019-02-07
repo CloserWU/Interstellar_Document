@@ -85,6 +85,11 @@ const DressDescription =[
     '凸显内的曲线身材'],
 ];
 
+const DressDescriptionDetail = [
+  ['款式编码：123','材质95涤纶 ，5%氨纶','腰线高腰','款式鱼尾裙','适合季节春季、秋季、夏季','图案纯色','装饰褶边'],
+  ['款式编码：456','材质99涤纶 ，1%氨纶','腰线低腰','款式鱼尾裙','适合季节夏季','图案纯色','装饰褶边'],
+];
+
 
 const Addname = ['aaa', 'bbb', 'ccc', 'ddd', 'fff'];
 
@@ -104,7 +109,10 @@ const Sales = [
   '120','1234','723','543','63','5512','348','857','60','11209',
 ];
 
+const Price = ['271.6','283.5'];
+
 const Shops = [
+  'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
   'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
   'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
   'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
@@ -126,6 +134,8 @@ function fakeList(count) {
       owner: user[i % 10],
       dresstitle: DressAtitle[i % 9],
       dressdescription: DressDescription[i % 2],
+      dressdescriptiondetail: DressDescriptionDetail[i % 2],
+      price: Price[i % 2],
       sales: Sales[i % 10],
       shops: Shops[i % 4],
       title: titles[i % 8],

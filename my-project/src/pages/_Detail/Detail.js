@@ -9,7 +9,7 @@ import StandardFormRow from '@/components/StandardFormRow';
 
 import styles from './Detail.less';
 
-
+const { Meta} = Card;
 const { Option } = Select;
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -61,7 +61,7 @@ class Detail extends PureComponent {
       loading,
     } = this.props;
     const id = this.props.match.params.i;
-    const i  = this.props.location.query;
+    // const i  = this.props.location.query;
     // const { id } = this.props.match.params.id; this.props.location.search
 
     const { getFieldDecorator } = form;
@@ -77,7 +77,7 @@ class Detail extends PureComponent {
     const TitleList = ({ data: { i, href } }) =>(
       <Form>
         <StandardFormRow grid last>
-          <Row gutter={16}>
+          <Row gutter={16} type='flex' align='middle'>
             <Col lg={12} md={12} sm={12} xs={24}>
               <FormItem {...formItemLayout} label="尺寸">
                 {getFieldDecorator('author', {})(
@@ -101,58 +101,75 @@ class Detail extends PureComponent {
               </FormItem>
             </Col>
           </Row>
-          <Row gutter={16}>
+          <Row gutter={16} type='flex' align='middle' justify='space-around'>
             <Col lg={12} md={12} sm={12} xs={12}>
-              <Button type="primary" block>Primary</Button>
+              <Button type="primary" block className={styles.button}>加入购物车</Button>
             </Col>
             <Col lg={2} md={2} sm={2} xs={2}>
-              <Icon type='cloud' />
+              <Icon type='heart' />
             </Col>
             <Col lg={10} md={10} sm={10} xs={10}>
-              <h3>123</h3>
+              <div>添加到我的关注</div>
             </Col>
           </Row>
-          <Row gutter={16}>
+          <div className={styles.div} />
+          <Row gutter={16} type='flex' align='middle' justify='space-around'>
             <Col lg={12} md={12} sm={12} xs={12}>
-              <Button type="primary" block>Primary</Button>
+              <Button type="danger" block className={styles.button}>我要定制</Button>
             </Col>
             <Col lg={2} md={2} sm={2} xs={2}>
-              <Icon type='cloud' />
+              <Icon type='question' />
             </Col>
             <Col lg={10} md={10} sm={10} xs={10}>
-              <h3>123</h3>
+              <div>寻求帮助</div>
             </Col>
           </Row>
+          <div className={styles.div} />
         </StandardFormRow>
       </Form>
     );
 
-    const Tablist = ({ data: { i, href } }) => (
-      <div>
+    const Mycard = ({img}) =>(
+      <Card
+        hoverable
+        style={{ width: 240 }}
+        cover={<img alt="example" src={img} />}
+      >
+        <Meta
+          title="Europe Street beat"
+        />
+      </Card>
+    );
+
+    const Tablist = ({ data: { dressdescriptiondetail, shops, cover } }) => (
+      <div className={styles.tabs}>
         <Tabs defaultActiveKey="1" onChange={callback}>
-          <TabPane tab="Tab 1" key="1">
+          <TabPane tab="商品描述" key="1" className={styles.tabpane}>
             <div>
-              <h3>123</h3>
-              <h3>123</h3>
-              <h3>123</h3>
-              <h3>123</h3>
+              <h4>{dressdescriptiondetail[0]}</h4>
+              <h4>{dressdescriptiondetail[1]}</h4>
+              <h4>{dressdescriptiondetail[2]}</h4>
+              <h4>{dressdescriptiondetail[3]}</h4>
+              <h4>{dressdescriptiondetail[4]}</h4>
+              <h4>{dressdescriptiondetail[5]}</h4>
+              <h4>{dressdescriptiondetail[6]}</h4>
             </div>
           </TabPane>
-          <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
+          <TabPane tab="细节" key="2">Content of Tab Pane 2</TabPane>
         </Tabs>
-        <h2>123</h2>
-        <Row gutter={24}>
-          <Col lg={6} md={6} sm={12} xs={24}>
-            <img alt='' src='https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png' />
+        <h1 className={styles.h1}>相关推荐</h1>
+        <Row gutter={64}>
+          <Col lg={6} md={6} sm={12} xs={12}>
+            <Mycard img="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
           </Col>
-          <Col lg={6} md={6} sm={12} xs={24}>
-            <img alt='' src='https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png' />
+          <Col lg={6} md={6} sm={12} xs={12}>
+            <Mycard img={shops} />
           </Col>
-          <Col lg={6} md={6} sm={12} xs={24}>
-            <img alt='' src='https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png' />
+          <Col lg={6} md={6} sm={12} xs={12}>
+            <Mycard img={cover} />
           </Col>
-          <Col lg={6} md={6} sm={12} xs={24}>
-            <img alt='' src='https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png' />
+          <Col lg={6} md={6} sm={12} xs={12}>
+            <Mycard img="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
           </Col>
         </Row>
       </div>
@@ -167,20 +184,19 @@ class Detail extends PureComponent {
         renderItem={item => ( item.i === id ? (
           <List.Item>
             <div className={styles.card}>
-              <Row gutter={24}>
-                <Col lg={14} md={24}>
-                  <img alt='' src='https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png' />
+              <Row gutter={24} type='flex' align='top' justify='center'>
+                <Col lg={14} md={24} xs={24}>
+                  <img alt='' src={item.shops} width='80%' />
                 </Col>
-                <Col lg={10} md={24}>
-                  <h3>{item.dresstitle}</h3>
+                <Col lg={10} md={24} xs={24}>
+                  <h2>{item.dresstitle}</h2>
+                  <h2>{item.price}</h2>
                   <TitleList data={item} />
-                  <ul>
-                    <li>{item.dressdescription[0]}</li>
-                    <li>{typeof item.i}</li>
-                    <li>{item.i}</li>
-                    <li>{item.dressdescription[1]}</li>
-                    <li>{item.dressdescription[2]}</li>
-                  </ul>
+
+                  <li>{item.dressdescription[0]}</li>
+                  <li>{item.dressdescription[1]}</li>
+                  <li>{item.dressdescription[2]}</li>
+
                 </Col>
               </Row>
               <Tablist data={item} />
@@ -191,11 +207,10 @@ class Detail extends PureComponent {
       />
     ) : null;
     // this.props.location.search  的值是0=0
+    // <div>{typeof this.props.location.query.i}</div>
     return(
       <PageHeaderWrapper>
         <Card>
-          <div>{typeof this.props.location.query}</div>
-          <div>{typeof id}</div>
           {cardList}
         </Card>
       </PageHeaderWrapper>

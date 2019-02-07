@@ -159,8 +159,6 @@ models: () => [
       },
       {
         "path": "/_goods/dressA/:i",
-        "icon": "table",
-        "name": "详情页",
         "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p___Detail__Detail" */'../_Detail/Detail'),
