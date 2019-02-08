@@ -79,7 +79,7 @@ class DressA extends PureComponent {
               >
                 <Card.Meta
                   title={item.dresstitle}
-                  description={<Ellipsis lines={2}><a>我要定制</a></Ellipsis>}
+                  description={<Ellipsis lines={2}><a href='/'>我要定制</a></Ellipsis>}
                 />
                 <div className={styles.cardItemContent}>
                   <span>销量 {item.sales}</span>

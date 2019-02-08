@@ -39,6 +39,9 @@ function callback(key) {
   },
 })
 class Detail extends PureComponent {
+
+  state = { images: ''};
+
   componentDidMount() {
     const { dispatch } = this.props;
 
@@ -51,15 +54,20 @@ class Detail extends PureComponent {
     });
   }
 
-
+  func = (img) =>{
+    this.setState({
+      images : img
+    });
+  };
 
   render(){
-
     const {
       list: { list = [] },
       form,
       loading,
     } = this.props;
+
+    const { images } = this.state;
     const id = this.props.match.params.i;
     // const i  = this.props.location.query;
     // const { id } = this.props.match.params.id; this.props.location.search
@@ -132,8 +140,9 @@ class Detail extends PureComponent {
     const Mycard = ({img}) =>(
       <Card
         hoverable
-        style={{ width: 240 }}
+        // style={{ width: '95%' }}
         cover={<img alt="example" src={img} />}
+        className={styles.mycard}
       >
         <Meta
           title="Europe Street beat"
@@ -158,7 +167,7 @@ class Detail extends PureComponent {
           <TabPane tab="细节" key="2">Content of Tab Pane 2</TabPane>
         </Tabs>
         <h1 className={styles.h1}>相关推荐</h1>
-        <Row gutter={64}>
+        <Row gutter={64} type='flex' align='middle' justify='space-around'>
           <Col lg={6} md={6} sm={12} xs={12}>
             <Mycard img="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
           </Col>
@@ -175,6 +184,16 @@ class Detail extends PureComponent {
       </div>
     );
 
+    const Img = ({data: {img}, i : I}) => (
+      <img
+        alt='center'
+        src={img[I]}
+        width='100%'
+        className={styles.img}
+        onClick={() => this.func(img[I])}
+      />
+    );
+
     const cardList = list ? (
       <List
         rowKey="id"
@@ -185,8 +204,15 @@ class Detail extends PureComponent {
           <List.Item>
             <div className={styles.card}>
               <Row gutter={24} type='flex' align='top' justify='center'>
-                <Col lg={14} md={24} xs={24}>
-                  <img alt='' src={item.shops} width='80%' />
+                <Col lg={2} md={4} xs={4}>
+                  <Img data={item} i={0} />
+                  <Img data={item} i={1} />
+                  <Img data={item} i={2} />
+                  <Img data={item} i={3} />
+                  <Img data={item} i={4} />
+                </Col>
+                <Col lg={12} md={20} xs={20}>
+                  <img alt='center' src={images === '' ? item.shops : images} width='100%' />
                 </Col>
                 <Col lg={10} md={24} xs={24}>
                   <h2>{item.dresstitle}</h2>

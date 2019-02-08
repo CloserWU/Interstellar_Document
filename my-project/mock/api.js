@@ -48,6 +48,14 @@ const desc = [
   '那时候我只会想自己想要什么，从不想自己拥有什么',
 ];
 
+const Img = [
+  ['https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+   'https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png',
+   'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+    'https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png',
+    'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png'],
+];
+
 const user = [
   '付小小',
   '曲丽丽',
@@ -135,6 +143,7 @@ function fakeList(count) {
       dresstitle: DressAtitle[i % 9],
       dressdescription: DressDescription[i % 2],
       dressdescriptiondetail: DressDescriptionDetail[i % 2],
+      img: Img[0],
       price: Price[i % 2],
       sales: Sales[i % 10],
       shops: Shops[i % 4],
