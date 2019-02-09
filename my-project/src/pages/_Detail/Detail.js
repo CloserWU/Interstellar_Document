@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import { connect, Link } from 'dva';
+import { connect } from 'dva';
+import { Link } from 'dva/router';
 import { Row, Col, Form, Card, Select, List, Avatar, Button, Icon, Tabs } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import TagSelect from '@/components/TagSelect';
@@ -138,16 +139,18 @@ class Detail extends PureComponent {
     );
 
     const Mycard = ({img}) =>(
-      <Card
-        hoverable
-        // style={{ width: '95%' }}
-        cover={<img alt="example" src={img} />}
-        className={styles.mycard}
-      >
-        <Meta
-          title="Europe Street beat"
-        />
-      </Card>
+      <Link to='/_goods/dressA/8'>
+        <Card
+          hoverable
+          // style={{ width: '95%' }}
+          cover={<img alt="example" src={img} />}
+          className={styles.mycard}
+        >
+          <Meta
+            title="Europe Street beat"
+          />
+        </Card>
+      </Link>
     );
 
     const Tablist = ({ data: { dressdescriptiondetail, shops, cover } }) => (

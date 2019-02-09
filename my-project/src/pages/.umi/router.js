@@ -167,6 +167,20 @@ models: () => [
         "exact": true
       },
       {
+        "path": "/shoppingcart",
+        "icon": "table",
+        "name": "购物车",
+        "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p___ShoppingCart__models__rule.js' */'D:/PHP/my-project1/src/pages/_ShoppingCart/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "p___ShoppingCart__Cart" */'../_ShoppingCart/Cart'),
+  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
+}),
+        "exact": true
+      },
+      {
         "path": "/AboutMC",
         "icon": "form",
         "name": "关于MC",

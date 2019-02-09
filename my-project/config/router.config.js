@@ -77,6 +77,12 @@ export default [
         component: './_Detail/Detail',
       },
       {
+        path: '/shoppingcart',
+        icon: 'table',
+        name: '购物车',
+        component: './_ShoppingCart/Cart',
+      },
+      {
         path: '/AboutMC',
         icon: 'form',
         name: '关于MC',

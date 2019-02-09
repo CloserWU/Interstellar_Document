@@ -18,7 +18,7 @@ const TotalPrice = ['286.13', '325.00'];
 
 // mock tableListDataSource
 let tableListDataSource = [];
-for (let i = 0; i < 46; i += 1) {
+for (let i = 0; i < 3; i += 1) {
   tableListDataSource.push({
     Project: Project[i % 2],
     Name: Name[i % 3],
