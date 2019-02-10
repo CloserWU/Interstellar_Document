@@ -247,7 +247,7 @@ class UpdateForm extends PureComponent {
     ];
   };
 
-  render() {
+  render() {// return null;
     const { updateModalVisible, handleUpdateModalVisible, values } = this.props;
     const { currentStep, formVals } = this.state;
 
@@ -312,7 +312,6 @@ class TableList extends PureComponent {
       align: 'right',
       render: val => `${val}`,
       // mark to display a total number
-      needTotal: true,
     },
     {
       title: '数量',
@@ -328,9 +327,9 @@ class TableList extends PureComponent {
       // },
       render: (val, record) => (
         <div>
-          <a onClick={() => this.handleUpdateModalVisible(true, record)}><Icon type='minus' /></a>
+          <a onClick={() => this.handleUpdate(record, false)}><Icon type='minus' /></a>
           {val}
-          <a><Icon type='plus' /></a>
+          <a onClick={() => this.handleUpdate(record, true)}><Icon type='plus' /></a>
         </div>
       ),
     },
@@ -360,6 +359,7 @@ class TableList extends PureComponent {
     {
       title: '总价',
       dataIndex: 'TotalPrice',
+      needTotal: true,
     },
     {
       title: '',
@@ -501,12 +501,12 @@ class TableList extends PureComponent {
     this.handleModalVisible();
   };
 
-  handleUpdate = fields => {
+  handleUpdate = (fields, flag) => {
     const { dispatch } = this.props;
     dispatch({
       type: 'rule/update',
       payload: {
-        Count: fields.Count,
+        Count: flag ? ((parseInt(fields.Count, 10)+1).toString()) : ((parseInt(fields.Count, 10)-1).toString()),
         name: fields.name,
         desc: fields.desc,
         key: fields.key,
@@ -547,9 +547,7 @@ class TableList extends PureComponent {
               <Button style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
                 重置
               </Button>
-              <a style={{ marginLeft: 8 }} onClick={this.toggleForm}>
-                展开 <Icon type="down" />
-              </a>
+
             </span>
           </Col>
         </Row>
@@ -662,9 +660,6 @@ class TableList extends PureComponent {
         <div className={styles.tableList}>
           <div className={styles.tableListForm}>{this.renderForm()}</div>
           <div className={styles.tableListOperator}>
-            <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>
-              新建
-            </Button>
             {selectedRows.length > 0 && (
               <span>
                 <Button>批量操作</Button>
@@ -685,14 +680,14 @@ class TableList extends PureComponent {
             onChange={this.handleStandardTableChange}
           />
         </div>
-      <CreateForm {...parentMethods} modalVisible={modalVisible} />
-      {stepFormValues && Object.keys(stepFormValues).length ? (
-        <UpdateForm
-          {...updateMethods}
-          updateModalVisible={updateModalVisible}
-          values={stepFormValues}
-        />
-      ) : null}
+        <CreateForm {...parentMethods} modalVisible={modalVisible} />
+        {stepFormValues && Object.keys(stepFormValues).length ? (
+          <UpdateForm
+            {...updateMethods}
+            updateModalVisible={updateModalVisible}
+            values={stepFormValues}
+          />
+        ) : null}
       </div>
     );
   }

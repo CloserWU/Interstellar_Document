@@ -10,9 +10,11 @@ import styles from './Info.less';
 const { Item } = Menu;
 const Icons = {
   base: <Icon type="cloud" />,
-  myaccount: <Icon type="user" />,
+  shopcart: <Icon type='shopping-cart' />,
+  myaccount: <Icon type="bank" />,
   mydata: <Icon type="user" />,
   address: <Icon type="sync" />,
+
   /* security: <Icon type="form" />,
   binding: <Icon type="table" />,
   notification: <Icon type="github" />, */
@@ -26,11 +28,13 @@ class Info extends Component {
     const { match, location } = props;
     const menuMap = {
       base: <FormattedMessage id="app.settings.menuMap.basic" defaultMessage="Basic Settings" />,
+      shopcart: <FormattedMessage id="app.settings.menuMap.shopcart" defaultMessage="ShopCart" />,
       myaccount: (
         <FormattedMessage id="app.settings.menuMap.myaccount" defaultMessage="MyAccount" />
       ),
       mydata: <FormattedMessage id="app.settings.menuMap.mydata" defaultMessage="MyData" />,
       address: <FormattedMessage id="app.settings.menuMap.address" defaultMessage="Address" />,
+
       /* security: (
         <FormattedMessage id="app.settings.menuMap.security" defaultMessage="Security Settings" />
       ),

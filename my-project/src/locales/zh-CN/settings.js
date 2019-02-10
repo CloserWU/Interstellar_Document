@@ -5,6 +5,7 @@ export default {
   'app.settings.menuMap.security': '安全设置',
   'app.settings.menuMap.binding': '账号绑定',
   'app.settings.menuMap.address': '收货地址',
+  'app.settings.menuMap.shopcart': '购物车',
   'app.settings.menuMap.notification': '新消息通知',
   'app.settings.basic.avatar': '头像',
   'app.settings.basic.change-avatar': '更换头像',

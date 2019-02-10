@@ -77,12 +77,6 @@ export default [
         component: './_Detail/Detail',
       },
       {
-        path: '/shoppingcart',
-        icon: 'table',
-        name: '购物车',
-        component: './_ShoppingCart/Cart',
-      },
-      {
         path: '/AboutMC',
         icon: 'form',
         name: '关于MC',
@@ -138,6 +132,10 @@ export default [
                 icon: 'cloud',
                 path: '/account/settings/base',
                 component: './_User1/Settings/BaseView',
+              },
+              {
+                path: '/account/settings/shopcart',
+                component: './_ShoppingCart/Cart',
               },
               {
                 path: '/account/settings/myaccount',

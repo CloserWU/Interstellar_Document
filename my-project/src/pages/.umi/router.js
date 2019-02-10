@@ -167,20 +167,6 @@ models: () => [
         "exact": true
       },
       {
-        "path": "/shoppingcart",
-        "icon": "table",
-        "name": "购物车",
-        "component": _dvaDynamic({
-  app: window.g_app,
-models: () => [
-  import(/* webpackChunkName: 'p___ShoppingCart__models__rule.js' */'D:/PHP/my-project1/src/pages/_ShoppingCart/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
-],
-  component: () => import(/* webpackChunkName: "p___ShoppingCart__Cart" */'../_ShoppingCart/Cart'),
-  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
-}),
-        "exact": true
-      },
-      {
         "path": "/AboutMC",
         "icon": "form",
         "name": "关于MC",
@@ -226,6 +212,18 @@ models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/BaseView'),
+  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
+}),
+                "exact": true
+              },
+              {
+                "path": "/account/settings/shopcart",
+                "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import(/* webpackChunkName: 'p___ShoppingCart__models__rule.js' */'D:/PHP/my-project1/src/pages/_ShoppingCart/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+],
+  component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_ShoppingCart/Cart'),
   LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
 }),
                 "exact": true

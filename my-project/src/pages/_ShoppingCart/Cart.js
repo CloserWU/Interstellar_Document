@@ -68,7 +68,7 @@ class Cart extends PureComponent {
     {
       title: '名称',
       dataIndex: 'Name',
-      render: val => (
+      render: (val) => (
         <div>
           <h3>{val[0]}</h3>
           <h4>{val[1]}</h4>
@@ -82,20 +82,26 @@ class Cart extends PureComponent {
       align: 'right',
       render: val => `${val}`,
       // mark to display a total number
-      needTotal: true,
     },
     {
       title: '数量',
       dataIndex: 'Count',
-      render(val) {
-        return (
-          <div>
-            <a><Icon type='minus' /></a>
-            {val}
-            <a><Icon type='plus' /></a>
-          </div>
-        );
-      }
+      // render(text, record, val) {
+      //   return (
+      //     <div>
+      //       <a onClick={this.handleUpdateModalVisible(true, record)}><Icon type='minus' /></a>
+      //       {`${val}`}
+      //       <a><Icon type='plus' /></a>
+      //     </div>
+      //   )
+      // },
+      render: (val, record) => (
+        <div>
+          <a onClick={() => this.handleUpdate(record, false)}><Icon type='minus' /></a>
+          {val}
+          <a onClick={() => this.handleUpdate(record, true)}><Icon type='plus' /></a>
+        </div>
+      ),
     },
     {
       title: '规格',
@@ -104,7 +110,7 @@ class Cart extends PureComponent {
     {
       title: '定制',
       dataIndex: 'Mode',
-      render(val) {// val 要放在第一个！！
+      render(val) {// val 要放在第一个！！   事实上，不论第一个参数是什么名字都是dataIndex的值，所哟完全可以把val改为text
         return (
           (val.toString() === '已选择定制') ? (
             <Fragment>
@@ -112,24 +118,24 @@ class Cart extends PureComponent {
             </Fragment>) : (<a href=''>不需要定制</a>)
         );
       },
-      //         <Fragment>
-      //           <a onClick={() => this.handleUpdateModalVisible(true, record)}>定制</a>
-      //           <Divider type="vertical" />
-      //           <a href="">身体数据</a>
-      //         </Fragment>
-
+      // render: (text, record, val) => (
+      //   <Fragment>
+      //     <a onClick={() => this.handleUpdateModalVisible(true, record)}>{val}</a>
+      //     <Divider type="vertical" />
+      //     <a href="">已选择</a>
+      //   </Fragment>
+      // ),
     },
     {
       title: '总价',
       dataIndex: 'TotalPrice',
+      needTotal: true,
+
     },
     {
       title: '',
       render() {
-        return (
-          <Icon type='close' />
-
-        );
+        return (<Icon type='close' />);
       }
     },
   ];
@@ -269,11 +275,12 @@ class Cart extends PureComponent {
     this.handleModalVisible();
   };
 
-  handleUpdate = fields => {
+  handleUpdate = (fields, flag) => {
     const { dispatch } = this.props;
     dispatch({
       type: 'rule/update',
       payload: {
+        Count: flag ? ((parseInt(fields.Count, 10)+1).toString()) : ((parseInt(fields.Count, 10)-1).toString()),
         name: fields.name,
         desc: fields.desc,
         key: fields.key,
@@ -349,35 +356,33 @@ class Cart extends PureComponent {
       handleUpdate: this.handleUpdate,
     };
     return (
-      <PageHeaderWrapper>
-        <Card>
-          <div className={styles.tableList}>
-            <div className={styles.tableListForm}>{this.renderForm()}</div>
-            <div className={styles.tableListOperator}>
-              {selectedRows.length > 0 && (
-                <span>
-                  <Button>批量操作</Button>
-                  <Dropdown overlay={menu}>
-                    <Button>
-                      更多操作 <Icon type="down" />
-                    </Button>
-                  </Dropdown>
-                </span>
-              )}
-            </div>
-
-            <StandardTable
-              selectedRows={selectedRows}
-              loading={loading}
-              data={data}
-              columns={this.columns}
-              onSelectRow={this.handleSelectRows}
-              onChange={this.handleStandardTableChange}
-            />
+      <div>
+        <div className={styles.tableList}>
+          <div className={styles.tableListForm}>{this.renderForm()}</div>
+          <div className={styles.tableListOperator}>
+            {selectedRows.length > 0 && (
+              <span>
+                <Button>批量操作</Button>
+                <Dropdown overlay={menu}>
+                  <Button>
+                    更多操作 <Icon type="down" />
+                  </Button>
+                </Dropdown>
+              </span>
+            )}
           </div>
 
-        </Card>
-      </PageHeaderWrapper>
+          <StandardTable
+            selectedRows={selectedRows}
+            loading={loading}
+            data={data}
+            columns={this.columns}
+            onSelectRow={this.handleSelectRows}
+            onChange={this.handleStandardTableChange}
+          />
+        </div>
+
+      </div>
     );
   }
 }
