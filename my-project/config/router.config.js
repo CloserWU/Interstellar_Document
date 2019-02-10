@@ -141,7 +141,7 @@ export default [
               },
               {
                 path: '/account/settings/myaccount',
-                component: './_User1/Settings/MyAccount',
+                component: './_User1/Settings/TableList',
               },
               {
                 path: '/account/settings/mydata',

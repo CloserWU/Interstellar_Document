@@ -239,7 +239,7 @@ models: () => [
   import(/* webpackChunkName: 'p___User1__Settings__models__list.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/list.js').then(m => { return { namespace: 'list',...m.default}}),
   import(/* webpackChunkName: 'p___User1__Settings__models__rule.js' */'D:/PHP/my-project1/src/pages/_User1/Settings/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
-  component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/MyAccount'),
+  component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../_User1/Settings/TableList'),
   LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
 }),
                 "exact": true

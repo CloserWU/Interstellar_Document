@@ -104,7 +104,7 @@ class Cart extends PureComponent {
     {
       title: '定制',
       dataIndex: 'Mode',
-      render(val, text, record) {// val 要放在第一个！！
+      render(val) {// val 要放在第一个！！
         return (
           (val.toString() === '已选择定制') ? (
             <Fragment>
@@ -365,6 +365,7 @@ class Cart extends PureComponent {
                 </span>
               )}
             </div>
+
             <StandardTable
               selectedRows={selectedRows}
               loading={loading}

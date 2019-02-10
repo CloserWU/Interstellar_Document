@@ -1,6 +1,6 @@
 module.exports = {
   navTheme: 'light',
-  primaryColor: '#FAAD14',
+  primaryColor: "#F5222D",
   layout: 'topmenu',
   contentWidth: 'Fixed',
   fixedHeader: true,
@@ -8,7 +8,8 @@ module.exports = {
   fixSiderbar: false,
   title: 'MC',
   collapse: true,
-}; /*{
+};
+/* {
   navTheme: 'dark', // theme for nav menu
   primaryColor: '#9995FF', // primary color of ant design
   layout: 'topmenu', // nav menu position: sidemenu or topmenu
@@ -20,7 +21,7 @@ module.exports = {
 };
 {
   "navTheme": "light",
-  "primaryColor": "#FAAD14",
+  "primaryColor": "#F5222D",
   "layout": "topmenu",
   "contentWidth": "Fixed",
   "fixedHeader": true,
@@ -28,4 +29,6 @@ module.exports = {
   "fixSiderbar": false,
   "title": "MC",
   "collapse": true
-}*/
+}
+}
+*/

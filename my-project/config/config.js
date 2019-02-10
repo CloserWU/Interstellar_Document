@@ -68,7 +68,7 @@ export default {
   // Theme for antd
   // https://ant.design/docs/react/customize-theme-cn
   theme: {
-    'primary-color': '#ffcc00',
+    'primary-color': "#F5222D",
     'menu-dark-bg': '#00182E',
     'menu-dark-submenu-bg': '#000B14',
     'layout-sider-background': '#003399',

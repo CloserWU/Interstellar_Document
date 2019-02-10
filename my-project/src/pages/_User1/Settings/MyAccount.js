@@ -2,7 +2,6 @@ import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
 import {
-  Avatar,
   Row,
   Col,
   Card,
@@ -23,6 +22,7 @@ import {
   Radio,
 } from 'antd';
 import StandardTable from '@/components/StandardTable';
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
 import styles from './MyAccount.less';
 
@@ -37,7 +37,6 @@ const getValue = obj =>
     .join(',');
 const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
-const code = ['156149465', '17984961'];
 
 const CreateForm = Form.create()(props => {
   const { modalVisible, form, handleAdd, handleModalVisible } = props;
@@ -81,6 +80,9 @@ class UpdateForm extends PureComponent {
         name: props.values.name,
         desc: props.values.desc,
         key: props.values.key,
+        Count: props.values.Count,
+        Price: props.values.Price,
+        owner: props.values.owner,
         target: '0',
         template: '0',
         type: '1',
@@ -194,17 +196,17 @@ class UpdateForm extends PureComponent {
       ];
     }
     return [
-      <FormItem key="name" {...this.formLayout} label="规则名称">
-        {form.getFieldDecorator('name', {
+      <FormItem key="Count" {...this.formLayout} label="规则名称">
+        {form.getFieldDecorator('Count', {
           rules: [{ required: true, message: '请输入规则名称！' }],
-          initialValue: formVals.name,
+          initialValue: formVals.Count,
         })(<Input placeholder="请输入" />)}
       </FormItem>,
-      <FormItem key="desc" {...this.formLayout} label="规则描述">
-        {form.getFieldDecorator('desc', {
+      <FormItem key="name" {...this.formLayout} label="规则描述">
+        {form.getFieldDecorator('name', {
           rules: [{ required: true, message: '请输入至少五个字符的规则描述！', min: 5 }],
-          initialValue: formVals.desc,
-        })(<TextArea rows={8} placeholder="请输入至少五个字符hahaha" />)}
+          initialValue: formVals.name,
+        })(<TextArea rows={4} placeholder="请输入至少五个字符" />)}
       </FormItem>,
     ];
   };
@@ -291,6 +293,10 @@ class MyAccount extends PureComponent {
 
   columns = [
     {
+      title: '规则名称',
+      dataIndex: 'name',
+    },
+    {
       title: '项目',
       dataIndex: 'Project',
       render: val => <img alt='' src={val} />,
@@ -298,7 +304,7 @@ class MyAccount extends PureComponent {
     {
       title: '名称',
       dataIndex: 'Name',
-      render: val => (
+      render: (val) => (
         <div>
           <h3>{val[0]}</h3>
           <h4>{val[1]}</h4>
@@ -317,6 +323,22 @@ class MyAccount extends PureComponent {
     {
       title: '数量',
       dataIndex: 'Count',
+      // render(text, record, val) {
+      //   return (
+      //     <div>
+      //       <a onClick={this.handleUpdateModalVisible(true, record)}><Icon type='minus' /></a>
+      //       {`${val}`}
+      //       <a><Icon type='plus' /></a>
+      //     </div>
+      //   )
+      // },
+      render: (val, record) => (
+        <div>
+          <a onClick={() => this.handleUpdateModalVisible(true, record)}><Icon type='minus' /></a>
+          {val}
+          <a><Icon type='plus' /></a>
+        </div>
+      ),
     },
     {
       title: '规格',
@@ -325,7 +347,7 @@ class MyAccount extends PureComponent {
     {
       title: '定制',
       dataIndex: 'Mode',
-      render(val, text, record) {// val 要放在第一个！！
+      render(val) {// val 要放在第一个！！   事实上，不论第一个参数是什么名字都是dataIndex的值，所哟完全可以把val改为text
         return (
           (val.toString() === '已选择定制') ? (
             <Fragment>
@@ -333,15 +355,22 @@ class MyAccount extends PureComponent {
             </Fragment>) : (<a href=''>不需要定制</a>)
         );
       },
-      //         <Fragment>
-      //           <a onClick={() => this.handleUpdateModalVisible(true, record)}>定制</a>
-      //           <Divider type="vertical" />
-      //           <a href="">身体数据</a>
-      //         </Fragment>
+      // render: (text, record, val) => (
+      //   <Fragment>
+      //     <a onClick={() => this.handleUpdateModalVisible(true, record)}>{val}</a>
+      //     <Divider type="vertical" />
+      //     <a href="">已选择</a>
+      //   </Fragment>
+      // ),
     },
     {
       title: '总价',
       dataIndex: 'TotalPrice',
+    },
+    {
+      title: '',
+      dataIndex: 'owner',
+      render: val => `${val}`,
     },
   ];
 
@@ -479,12 +508,19 @@ class MyAccount extends PureComponent {
 
   handleUpdate = fields => {
     const { dispatch } = this.props;
+    const { formValues } = this.state;
     dispatch({
       type: 'rule/update',
       payload: {
-        name: fields.name,
-        desc: fields.desc,
-        key: fields.key,
+        query: formValues,
+        body: {
+          Count: fields.Count,
+          name: fields.name,
+          desc: fields.desc,
+          key: fields.key,
+          Price: fields.Price,
+          owner: fields.owner,
+        },
       },
     });
 
@@ -590,7 +626,7 @@ class MyAccount extends PureComponent {
           </Col>
         </Row>
         <div style={{ overflow: 'hidden' }}>
-          <div style={{ float: 'right', marginBottom: 24 }}>
+          <div style={{ marginBottom: 24 }}>
             <Button type="primary" htmlType="submit">
               查询
             </Button>

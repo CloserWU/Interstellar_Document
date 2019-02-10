@@ -24,7 +24,7 @@ import {
 import StandardTable from '@/components/StandardTable';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
-import styles from './TableList.less';
+import styles from './MyAccount.less';
 
 const FormItem = Form.Item;
 const { Step } = Steps;
@@ -291,8 +291,28 @@ class TableList extends PureComponent {
 
   columns = [
     {
-      title: '规则名称',
-      dataIndex: 'name',
+      title: '项目',
+      dataIndex: 'Project',
+      render: val => <img alt='' src={val} />,
+    },
+    {
+      title: '名称',
+      dataIndex: 'Name',
+      render: (val) => (
+        <div>
+          <h3>{val[0]}</h3>
+          <h4>{val[1]}</h4>
+        </div>
+      ),
+    },
+    {
+      title: '价格',
+      dataIndex: 'Price',
+      sorter: true,
+      align: 'right',
+      render: val => `${val}`,
+      // mark to display a total number
+      needTotal: true,
     },
     {
       title: '数量',
@@ -306,67 +326,46 @@ class TableList extends PureComponent {
       //     </div>
       //   )
       // },
-      // render: (val, record) => (
-      //   <div>
-      //     <a onClick={() => this.handleUpdateModalVisible(true, record)}><Icon type='minus' /></a>
-      //     {val}
-      //     <a><Icon type='plus' /></a>
-      //   </div>
+      render: (val, record) => (
+        <div>
+          <a onClick={() => this.handleUpdateModalVisible(true, record)}><Icon type='minus' /></a>
+          {val}
+          <a><Icon type='plus' /></a>
+        </div>
+      ),
+    },
+    {
+      title: '规格',
+      dataIndex: 'Standard',
+    },
+    {
+      title: '定制',
+      dataIndex: 'Mode',
+      render(val) {// val 要放在第一个！！   事实上，不论第一个参数是什么名字都是dataIndex的值，所哟完全可以把val改为text
+        return (
+          (val.toString() === '已选择定制') ? (
+            <Fragment>
+              <a href=''>{val}</a>
+            </Fragment>) : (<a href=''>不需要定制</a>)
+        );
+      },
+      // render: (text, record, val) => (
+      //   <Fragment>
+      //     <a onClick={() => this.handleUpdateModalVisible(true, record)}>{val}</a>
+      //     <Divider type="vertical" />
+      //     <a href="">已选择</a>
+      //   </Fragment>
       // ),
     },
     {
-      title: '描述',
-      dataIndex: 'desc',
+      title: '总价',
+      dataIndex: 'TotalPrice',
     },
     {
-      title: '服务调用次数',
-      dataIndex: 'callNo',
-      sorter: true,
-      align: 'right',
-      render: val => `${val} 万`,
-      // mark to display a total number
-      needTotal: true,
-    },
-    {
-      title: '状态',
-      dataIndex: 'status',
-      filters: [
-        {
-          text: status[0],
-          value: 0,
-        },
-        {
-          text: status[1],
-          value: 1,
-        },
-        {
-          text: status[2],
-          value: 2,
-        },
-        {
-          text: status[3],
-          value: 3,
-        },
-      ],
-      render(val) {
-        return <Badge status={statusMap[val]} text={status[val]} />;
-      },
-    },
-    {
-      title: '上次调度时间',
-      dataIndex: 'updatedAt',
-      sorter: true,
-      render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
-    },
-    {
-      title: '操作',
-      render: (text, record) => (
-        <Fragment>
-          <a onClick={() => this.handleUpdateModalVisible(true, record)}>配置</a>
-          <Divider type="vertical" />
-          <a href="">订阅警报</a>
-        </Fragment>
-      ),
+      title: '',
+      render() {
+        return (<Icon type='close' />);
+      }
     },
   ];
 
@@ -659,44 +658,42 @@ class TableList extends PureComponent {
       handleUpdate: this.handleUpdate,
     };
     return (
-      <PageHeaderWrapper title="查询表格">
-        <Card bordered={false}>
-          <div className={styles.tableList}>
-            <div className={styles.tableListForm}>{this.renderForm()}</div>
-            <div className={styles.tableListOperator}>
-              <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>
-                新建
-              </Button>
-              {selectedRows.length > 0 && (
-                <span>
-                  <Button>批量操作</Button>
-                  <Dropdown overlay={menu}>
-                    <Button>
-                      更多操作 <Icon type="down" />
-                    </Button>
-                  </Dropdown>
-                </span>
-              )}
-            </div>
-            <StandardTable
-              selectedRows={selectedRows}
-              loading={loading}
-              data={data}
-              columns={this.columns}
-              onSelectRow={this.handleSelectRows}
-              onChange={this.handleStandardTableChange}
-            />
+      <div>
+        <div className={styles.tableList}>
+          <div className={styles.tableListForm}>{this.renderForm()}</div>
+          <div className={styles.tableListOperator}>
+            <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>
+              新建
+            </Button>
+            {selectedRows.length > 0 && (
+              <span>
+                <Button>批量操作</Button>
+                <Dropdown overlay={menu}>
+                  <Button>
+                    更多操作 <Icon type="down" />
+                  </Button>
+                </Dropdown>
+              </span>
+            )}
           </div>
-        </Card>
-        <CreateForm {...parentMethods} modalVisible={modalVisible} />
-        {stepFormValues && Object.keys(stepFormValues).length ? (
-          <UpdateForm
-            {...updateMethods}
-            updateModalVisible={updateModalVisible}
-            values={stepFormValues}
+          <StandardTable
+            selectedRows={selectedRows}
+            loading={loading}
+            data={data}
+            columns={this.columns}
+            onSelectRow={this.handleSelectRows}
+            onChange={this.handleStandardTableChange}
           />
-        ) : null}
-      </PageHeaderWrapper>
+        </div>
+      <CreateForm {...parentMethods} modalVisible={modalVisible} />
+      {stepFormValues && Object.keys(stepFormValues).length ? (
+        <UpdateForm
+          {...updateMethods}
+          updateModalVisible={updateModalVisible}
+          values={stepFormValues}
+        />
+      ) : null}
+      </div>
     );
   }
 }

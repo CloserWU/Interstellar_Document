@@ -11,19 +11,19 @@ const Project = [
   'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
 ];
 const Price = ['276.13', '325.00'];
-const Count = ['1', '2'];
+const count = ['1', '2'];
 const Standard = ['黑.L', '白.M'];
 const Mode = ['已选择定制', '不需要定制'];
 const TotalPrice = ['286.13', '325.00'];
 
 // mock tableListDataSource
 let tableListDataSource = [];
-for (let i = 0; i < 3; i += 1) {
+for (let i = 0; i < 13; i += 1) {
   tableListDataSource.push({
     Project: Project[i % 2],
     Name: Name[i % 3],
     Price: Price[i % 2],
-    Count: Count[i % 2],
+    Count: count[i % 2],
     Standard: Standard[i % 2],
     Mode: Mode[i % 2],
     TotalPrice: TotalPrice[i % 2],
@@ -106,7 +106,7 @@ function postRule(req, res, u, b) {
   }
 
   const body = (b && b.body) || req.body;
-  const { method, name, desc, key } = body;
+  const { method, name, desc, key, Count } = body;
 
   switch (method) {
     /* eslint no-case-declarations:0 */
@@ -136,7 +136,7 @@ function postRule(req, res, u, b) {
     case 'update':
       tableListDataSource = tableListDataSource.map(item => {
         if (item.key === key) {
-          Object.assign(item, { desc, name });
+          Object.assign(item, { desc, name, Count });
           return item;
         }
         return item;
