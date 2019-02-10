@@ -325,13 +325,13 @@ class TableList extends PureComponent {
       //     </div>
       //   )
       // },
-      render: (val, record) => (
-        <div>
-          <a onClick={() => this.handleUpdate(record, false)}><Icon type='minus' /></a>
-          {val}
-          <a onClick={() => this.handleUpdate(record, true)}><Icon type='plus' /></a>
-        </div>
-      ),
+      // render: (val, record) => (
+      //   <div>
+      //     <a onClick={() => this.handleUpdate(record, false)}><Icon type='minus' /></a>
+      //     {val}
+      //     <a onClick={() => this.handleUpdate(record, true)}><Icon type='plus' /></a>
+      //   </div>
+      // ),
     },
     {
       title: '规格',

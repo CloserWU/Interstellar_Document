@@ -121,7 +121,7 @@ export default [
           },*/
           {
             path: '/account/settings',
-            name: 'settings',
+            name: '个人设置',
             component: './_User1/Settings/Info',
             routes: [
               {

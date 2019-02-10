@@ -381,7 +381,7 @@ class Cart extends PureComponent {
             onChange={this.handleStandardTableChange}
           />
         </div>
-
+        <div>确认收货地址</div>
       </div>
     );
   }

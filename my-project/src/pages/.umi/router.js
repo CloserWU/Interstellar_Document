@@ -184,7 +184,7 @@ models: () => [
         "routes": [
           {
             "path": "/account/settings",
-            "name": "settings",
+            "name": "个人设置",
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
