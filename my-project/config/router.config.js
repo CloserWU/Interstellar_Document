@@ -18,8 +18,8 @@ export default [
     authority: ['admin', 'user'],
     routes: [
       // dashboard
-      { path: '/', redirect: '/dashboard/analysis' },
-      {
+      { path: '/', redirect: '/_dashboard' },
+      /*{
         path: '/dashboard',
         name: 'dashboard',
         icon: 'dashboard',
@@ -40,7 +40,7 @@ export default [
             component: './Dashboard/Workplace',
           },
         ],
-      },
+      },*/
 
       {
         path: '/_dashboard',

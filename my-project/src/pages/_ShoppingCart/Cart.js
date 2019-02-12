@@ -2,6 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
 import {
+  List,
   Avatar,
   Row,
   Col,
@@ -25,20 +26,77 @@ import {
 import StandardTable from '@/components/StandardTable';
 
 import styles from './Cart.less';
-import PageHeaderWrapper from "../../components/PageHeaderWrapper";
 
 const FormItem = Form.Item;
-const { Step } = Steps;
-const { TextArea } = Input;
 const { Option } = Select;
-const RadioGroup = Radio.Group;
 const getValue = obj =>
   Object.keys(obj)
     .map(key => obj[key])
     .join(',');
-const statusMap = ['default', 'processing', 'success', 'error'];
-const status = ['关闭', '运行中', '已上线', '异常'];
-const code = ['156149465', '17984961'];
+
+@connect(({ list, loading }) => ({
+  list,
+  loading: loading.models.list,
+}))
+@Form.create()
+class Address extends PureComponent {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'list/fetch',
+      payload: {
+        count: 1,
+      },
+    });
+  }
+
+  render() {
+    const {
+      list: { list },
+      loading,
+    } = this.props;
+
+
+    return (
+
+      <Card
+        className={styles.listCard}
+        bordered='true'
+        style={{ marginTop: 0 }}
+        bodyStyle={{ padding: '0 0px 0px 20px' }}   // padding 上 右 下 左
+      >
+        <List
+          size="large"
+          rowKey="id"
+          loading={loading}
+          dataSource={list}
+          pagination={null}
+          renderItem={item => (
+            <List.Item>
+              <List.Item.Meta
+                title={
+                  <div>
+                    <a href={item.href}>
+                      <h2>{item.addname}</h2>
+                    </a>
+                    <h3>{item.addtelnum}</h3>
+                  </div>
+                }
+                description={
+                  <div>
+                    {item.geographic1}
+                    {item.addaddress}
+                  </div>
+                }
+              />
+            </List.Item>
+          )}
+        />
+      </Card>
+
+    );
+  }
+}
 
 
 /* eslint react/no-multi-comp:0 */
@@ -381,7 +439,31 @@ class Cart extends PureComponent {
             onChange={this.handleStandardTableChange}
           />
         </div>
-        <div>确认收货地址</div>
+        <div className={styles.div}>确认收货地址</div>
+        <Row gutter={16}>
+          <Col lg={14} md={14} sm={24} xs={24}>
+            <Address />
+          </Col>
+          <Col lg={10} md={10} sm={24} xs={24}>
+            <Button htmlType='' type='default' style={{width: '100%', height: '15vh'}}><Icon type='plus' />新建收货地址</Button>
+          </Col>
+        </Row>
+        <div className={styles.div}>总额</div>
+        <Row>
+          <Col lg={6} md={6} sm={6} xs={7}>
+            <Card className={styles.card}>总计</Card>
+            <Card className={styles.card}>物流</Card>
+            <Card className={styles.card}>订单号</Card>
+          </Col>
+          <Col lg={8} md={8} sm={8} xs={7}>
+            <Card>123</Card>
+            <Card>¥123</Card>
+            <Card>123</Card>
+          </Col>
+          <Col lg={10} md={10} sm={10} xs={10}>
+            <Button htmlType='' type='primary' className={styles.button}>提交订单并付款</Button>
+          </Col>
+        </Row>
       </div>
     );
   }

@@ -37,7 +37,6 @@ const validatorGeographic = (rule, value, callback) => {
 const FormItem = Form.Item;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
-const { Search } = Input;
 
 @connect(({ list, loading }) => ({
   list,

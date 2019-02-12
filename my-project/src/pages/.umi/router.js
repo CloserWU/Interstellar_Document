@@ -77,63 +77,8 @@ models: () => [
     "routes": [
       {
         "path": "/",
-        "redirect": "/dashboard/analysis",
+        "redirect": "/_dashboard",
         "exact": true
-      },
-      {
-        "path": "/dashboard",
-        "name": "dashboard",
-        "icon": "dashboard",
-        "routes": [
-          {
-            "path": "/dashboard/analysis",
-            "name": "analysis",
-            "component": _dvaDynamic({
-  app: window.g_app,
-models: () => [
-  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
-],
-  component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../Dashboard/Analysis'),
-  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
-}),
-            "exact": true
-          },
-          {
-            "path": "/dashboard/monitor",
-            "name": "monitor",
-            "component": _dvaDynamic({
-  app: window.g_app,
-models: () => [
-  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
-],
-  component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../Dashboard/Monitor'),
-  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
-}),
-            "exact": true
-          },
-          {
-            "path": "/dashboard/workplace",
-            "name": "workplace",
-            "component": _dvaDynamic({
-  app: window.g_app,
-models: () => [
-  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'D:/PHP/my-project1/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
-],
-  component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../Dashboard/Workplace'),
-  LoadingComponent: require('D:/PHP/my-project1/src/components/PageLoading/index').default,
-}),
-            "exact": true
-          },
-          {
-            "component": () => React.createElement(require('D:/PHP/my-project1/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
-          }
-        ]
       },
       {
         "path": "/_dashboard",
