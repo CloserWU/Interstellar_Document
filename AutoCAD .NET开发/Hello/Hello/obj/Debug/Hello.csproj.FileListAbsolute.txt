@@ -1,0 +1,16 @@
+F:\VisualStudioProject\Hello\Hello\bin\Debug\Hello.dll
+F:\VisualStudioProject\Hello\Hello\bin\Debug\Hello.pdb
+F:\VisualStudioProject\Hello\Hello\obj\Debug\Hello.dll
+F:\VisualStudioProject\Hello\Hello\obj\Debug\Hello.pdb
+F:\VisualStudioProject\Hello\Hello\obj\Debug\Hello.csprojResolveAssemblyReference.cache
+E:\VisualStudioProject\Hello\Hello\bin\Debug\Hello.dll
+E:\VisualStudioProject\Hello\Hello\bin\Debug\Hello.pdb
+E:\VisualStudioProject\Hello\Hello\obj\Debug\Hello.csproj.CoreCompileInputs.cache
+E:\VisualStudioProject\Hello\Hello\obj\Debug\Hello.dll
+E:\VisualStudioProject\Hello\Hello\obj\Debug\Hello.pdb
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\Hello\bin\Debug\Hello.dll
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\Hello\bin\Debug\Hello.pdb
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\Hello\obj\Debug\Hello.csprojAssemblyReference.cache
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\Hello\obj\Debug\Hello.csproj.CoreCompileInputs.cache
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\Hello\obj\Debug\Hello.dll
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\Hello\obj\Debug\Hello.pdb

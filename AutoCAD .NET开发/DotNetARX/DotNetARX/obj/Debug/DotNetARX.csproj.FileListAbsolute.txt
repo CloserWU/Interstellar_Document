@@ -1,0 +1,9 @@
+F:\VisualStudioProject\DotNetARX\DotNetARX\bin\Debug\DotNetARX.dll
+F:\VisualStudioProject\DotNetARX\DotNetARX\bin\Debug\DotNetARX.pdb
+F:\VisualStudioProject\DotNetARX\DotNetARX\obj\Debug\DotNetARX.dll
+F:\VisualStudioProject\DotNetARX\DotNetARX\obj\Debug\DotNetARX.pdb
+E:\VisualStudioProject\DotNetARX\DotNetARX\bin\Debug\DotNetARX.dll
+E:\VisualStudioProject\DotNetARX\DotNetARX\bin\Debug\DotNetARX.pdb
+E:\VisualStudioProject\DotNetARX\DotNetARX\obj\Debug\DotNetARX.csproj.CoreCompileInputs.cache
+E:\VisualStudioProject\DotNetARX\DotNetARX\obj\Debug\DotNetARX.dll
+E:\VisualStudioProject\DotNetARX\DotNetARX\obj\Debug\DotNetARX.pdb

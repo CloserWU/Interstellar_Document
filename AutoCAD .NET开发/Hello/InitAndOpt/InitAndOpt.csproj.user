@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\Autodesk\AutoCAD_2013_Simplified_Chinese_Win_64bit\x64\acad\Program Files\Root\Locked\acad.exe</StartProgram>
+  </PropertyGroup>
+</Project>

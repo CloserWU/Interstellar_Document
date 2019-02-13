@@ -1,0 +1,16 @@
+F:\VisualStudioProject\Hello\InitAndOpt\bin\Debug\InitAndOpt.dll
+F:\VisualStudioProject\Hello\InitAndOpt\bin\Debug\InitAndOpt.pdb
+F:\VisualStudioProject\Hello\InitAndOpt\obj\Debug\InitAndOpt.dll
+F:\VisualStudioProject\Hello\InitAndOpt\obj\Debug\InitAndOpt.pdb
+F:\VisualStudioProject\Hello\InitAndOpt\obj\Debug\InitAndOpt.csprojResolveAssemblyReference.cache
+E:\VisualStudioProject\Hello\InitAndOpt\bin\Debug\InitAndOpt.dll
+E:\VisualStudioProject\Hello\InitAndOpt\bin\Debug\InitAndOpt.pdb
+E:\VisualStudioProject\Hello\InitAndOpt\obj\Debug\InitAndOpt.csproj.CoreCompileInputs.cache
+E:\VisualStudioProject\Hello\InitAndOpt\obj\Debug\InitAndOpt.dll
+E:\VisualStudioProject\Hello\InitAndOpt\obj\Debug\InitAndOpt.pdb
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\InitAndOpt\bin\Debug\InitAndOpt.dll
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\InitAndOpt\bin\Debug\InitAndOpt.pdb
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\InitAndOpt\obj\Debug\InitAndOpt.csprojAssemblyReference.cache
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\InitAndOpt\obj\Debug\InitAndOpt.csproj.CoreCompileInputs.cache
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\InitAndOpt\obj\Debug\InitAndOpt.dll
+C:\Users\Closer\Desktop\工作文件\AutoCAD\Hello\InitAndOpt\obj\Debug\InitAndOpt.pdb
