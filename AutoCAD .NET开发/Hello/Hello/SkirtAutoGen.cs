@@ -14,6 +14,7 @@ namespace Hello
 {
     public class SkirtAutoGen
     {
+        public double pi = Math.PI;
         //人体参数
         public double FW = 42;         //前腰
         public double BW = 40;         //后腰
@@ -22,7 +23,7 @@ namespace Hello
         public double BH = 52;   //后臀
         public double L = 60;    //腿长
         public double K;    //膝长
-        public double D;    //直裆长
+        public double D = 18;    //直裆长
         //结构参数
         public double a = 60;    //裙长
         public double b = 3.5;   //腰头宽度
@@ -291,17 +292,115 @@ namespace Hello
             Arc Circle11 = new Arc(O1, O1A1, Math.PI, Math.PI * 2);
             Arc Circle01 = new Arc(O1, radius1, Math.PI, Math.PI * 2);
 
-
-            Ellipse ellipse = new Ellipse(new Point3d(0, 0, 0), new Vector3d(0, 0, 1), new Vector3d(100, 0, 0), 0.6,0,Math.PI*2);
+            //Ellipse ellipse = new Ellipse(new Point3d(0, 0, 0), new Vector3d(0, 0, 1), new Vector3d(100, 0, 0), 0.6,0,Math.PI*2);
 
             //定义一个指向当前数据库的事物处理
             using (Transaction trans = db.TransactionManager.StartTransaction())
             {
                 BlockTable bt = (BlockTable)trans.GetObject(db.BlockTableId, OpenMode.ForRead);
                 BlockTableRecord btr = (BlockTableRecord)trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
-                db.AddToModelSpace(Circle1, Circle0, Circle01, Circle11, ellipse);
+                db.AddToModelSpace(Circle1, Circle0, Circle01, Circle11);
                 trans.Commit();
             }
+        }
+
+        [CommandMethod("drawWaveDress")]
+        public void drawWaveDress()
+        {
+            FW = 32;
+            BW = 30;
+            L = 89;
+            D = 18;
+            //获取当前活动图形数据库
+            Database db = HostApplicationServices.WorkingDatabase;
+            //获取命令行对象
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+
+            //180°大圆
+            Point3d O = new Point3d(0, 250, 0);
+            double OA = (10 * Math.PI * D + 120 * Math.PI + 10 * (FW + BW) + 7 * Math.PI * L) / (20 * Math.PI);
+            Arc arc1 = new Arc(O, OA, Math.PI, 2 * Math.PI);
+            //225°小圆
+            double r = (FW + BW) / (2 * Math.PI);
+            double O_A = D + 12.0 + (FW + BW) / (2 * Math.PI);
+            double O_O = OA - O_A;
+            Point3d O_ = new Point3d(-O_O, 250, 0);
+            Arc arc2 = new Arc(O_, r, Math.PI * 0.75, 2 * Math.PI);
+            //腰线
+            double O_K_ = r - 1;
+            Point3d K_ = new Point3d(O_.X + O_K_, O.Y, 0);
+            double Radius_radio = O_K_ / r;
+            Ellipse ellipse = new Ellipse
+                (O_, new Vector3d(0, 0, 1), new Vector3d(0, r, 0), Radius_radio, Math.PI * 1, Math.PI * 1.5);
+            //裙摆
+            Point3d Point_D = new Point3d(O_.X - r * Math.Sin(pi * 0.25), O_.Y + r * Math.Sin(pi * 0.25), 0);
+            Point3d Point_D_ = new Point3d(Point_D.X - D * Math.Cos(pi / 9.0), Point_D.Y + D * Math.Sin(pi / 9.0), 0);
+            Line D_D = new Line(Point_D, Point_D_);
+
+            Point3d A = new Point3d(-OA, 250, 0);
+            double k_AD_ = getVerticalBisector(Point_D_, A);
+            Point3d middleAD_ = getMiddlePoint(Point_D_, A);
+            Point3d inter1 = GetIntersection
+                (A, new Point3d(-OA + 50, 250, 0), middleAD_, new Point3d(middleAD_.X + 1, middleAD_.Y + k_AD_, 0));
+
+            Arc arc3 = new Arc(inter1, OA - Math.Abs(inter1.X), Math.Atan((inter1.Y - Point_D_.Y) / (inter1.X - Point_D_.X)), pi);
+
+            //double k_D_D = Math.Tan(pi * 7.0 / 18.0);
+            //Point3d inter1 = GetIntersection
+            //    (A, new Point3d(-OA + 50, 250, 0), Point_D_, new Point3d(Point_D_.X + 1, Point_D_.Y + k_D_D, 0));
+            //Arc arc3 = new Arc(inter1, OA - Math.Abs(inter1.X), pi * 7.0 / 18.0, pi);
+
+            Point3d E_ = new Point3d(-Math.Sqrt(2) / 2.0 * (OA - 1.0), 250.0 - Math.Sqrt(2) / 2.0 * (OA - 1.0), 0);
+            double k_AE_ = getVerticalBisector(E_, A);
+            Point3d middleAE_ = getMiddlePoint(E_, A);
+            Point3d inter2 = GetIntersection
+                (A, new Point3d(-OA + 50, 250, 0), middleAE_, new Point3d(middleAE_.X + 1, middleAE_.Y + k_AE_, 0));
+            Arc arc4 = new Arc(inter2, OA - Math.Abs(inter2.X), pi, pi + Math.Atan((inter2.Y - E_.Y) / (inter2.X - E_.X)));
+
+            Point3d B = new Point3d(0, 250 - OA, 0);
+            double k_BE_ = getVerticalBisector(B, E_);
+            Point3d middleBE_ = getMiddlePoint(B, E_);
+            Point3d inter3 = GetIntersection
+                (B, new Point3d(0, 200, 0), middleBE_, new Point3d(middleBE_.X + 1, middleBE_.Y + k_BE_, 0));
+            Arc arc5 = new Arc(inter3, OA - O.Y + inter3.Y, pi + Math.Atan((inter3.Y - E_.Y) / (inter3.X - E_.X)), pi * 1.5);
+
+            Line OE_ = new Line(O, E_);
+
+            Point3d F_ = new Point3d(Math.Sqrt(2) / 2.0 * (OA - 1.0), 250.0 - Math.Sqrt(2) / 2.0 * (OA - 1.0), 0);
+            double k_BF_ = getVerticalBisector(B, F_);
+            Point3d middleBF_ = getMiddlePoint(B, F_);
+            Point3d inter4 = GetIntersection
+                (B, new Point3d(0, 200, 0), middleBF_, new Point3d(middleBF_.X + 1, middleBF_.Y + k_BF_, 0));
+            Arc arc6 = new Arc(inter4, OA - O.Y + inter4.Y, pi * 1.5, 2 * pi + Math.Atan((inter4.Y - F_.Y) / (inter4.X - F_.X)));
+
+            Point3d C = new Point3d(OA, 250, 0);
+            double k_CF_ = getVerticalBisector(C, F_);
+            Point3d middleCF_ = getMiddlePoint(C, F_);
+            Point3d inter5 = GetIntersection
+                (C, new Point3d(OA + 50, 250, 0), middleCF_, new Point3d(middleCF_.X + 1, middleCF_.Y + k_CF_, 0));
+            Arc arc7 = new Arc(inter5, OA - Math.Abs(inter5.X), 2 * pi + Math.Atan((inter5.Y - F_.Y) / (inter5.X - F_.X)), pi * 2.0);
+
+            Line OF_ = new Line(O, F_);
+            Line CK_ = new Line(C, K_);
+
+            using (Transaction trans = db.TransactionManager.StartTransaction())
+            {
+                BlockTable bt = (BlockTable)trans.GetObject(db.BlockTableId, OpenMode.ForRead);
+                BlockTableRecord btr = (BlockTableRecord)trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
+                db.AddToModelSpace(arc1, arc2, ellipse, D_D, arc3, arc4, arc5, arc6, arc7, OE_, OF_, CK_);
+                trans.Commit();
+            }
+        }
+
+        public double getVerticalBisector(Point3d A, Point3d B) {
+            Point3d middlePoint = new Point3d((A.X + B.X) / 2.0, (A.Y + B.Y) / 2.0, 0);
+            double k = (A.Y - B.Y) / (A.X - B.X);
+            double k_ = -1.0 / k;
+            return k_;
+        }
+
+        public Point3d getMiddlePoint(Point3d A, Point3d B) {
+            return new Point3d((A.X + B.X) / 2.0, (A.Y + B.Y) / 2.0, 0);
         }
 
         [CommandMethod("drawWaistHead")]
@@ -329,7 +428,7 @@ namespace Hello
             }
         }
 
-
+       
         //根据凸度画圆弧
         public  Polyline getArcByBulge(Point3d pointStart, Point3d pointEnd, double bulge)
         {
