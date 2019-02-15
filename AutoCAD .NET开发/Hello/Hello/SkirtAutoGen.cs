@@ -291,6 +291,12 @@ namespace Hello
             double O1A1 = (FW + BW) / Math.PI;
             Arc Circle11 = new Arc(O1, O1A1, Math.PI, Math.PI * 2);
             Arc Circle01 = new Arc(O1, radius1, Math.PI, Math.PI * 2);
+            Point3d A_ = new Point3d(O1.X - O1A1, O1.Y, 0);
+            Point3d B_ = new Point3d(O1.X + O1A1, O1.Y, 0);
+            Point3d C_ = new Point3d(O1.X - radius1, O1.Y, 0);
+            Point3d D_ = new Point3d(O1.X + radius1, O1.Y, 0);
+            Line line1 = new Line(A_, C_);
+            Line line2 = new Line(B_, D_);
 
             //Ellipse ellipse = new Ellipse(new Point3d(0, 0, 0), new Vector3d(0, 0, 1), new Vector3d(100, 0, 0), 0.6,0,Math.PI*2);
 
@@ -299,7 +305,7 @@ namespace Hello
             {
                 BlockTable bt = (BlockTable)trans.GetObject(db.BlockTableId, OpenMode.ForRead);
                 BlockTableRecord btr = (BlockTableRecord)trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
-                db.AddToModelSpace(Circle1, Circle0, Circle01, Circle11);
+                db.AddToModelSpace(Circle1, Circle0, Circle01, Circle11, line1, line2);
                 trans.Commit();
             }
         }
@@ -325,7 +331,7 @@ namespace Hello
             double O_A = D + 12.0 + (FW + BW) / (2 * Math.PI);
             double O_O = OA - O_A;
             Point3d O_ = new Point3d(-O_O, 250, 0);
-            Arc arc2 = new Arc(O_, r, Math.PI * 0.75, 2 * Math.PI);
+            Arc arc2 = new Arc(O_, r, Math.PI * 0.75, 1.5 * Math.PI);
             //腰线
             double O_K_ = r - 1;
             Point3d K_ = new Point3d(O_.X + O_K_, O.Y, 0);
@@ -387,7 +393,8 @@ namespace Hello
             {
                 BlockTable bt = (BlockTable)trans.GetObject(db.BlockTableId, OpenMode.ForRead);
                 BlockTableRecord btr = (BlockTableRecord)trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
-                db.AddToModelSpace(arc1, arc2, ellipse, D_D, arc3, arc4, arc5, arc6, arc7, OE_, OF_, CK_);
+                //db.AddToModelSpace(arc1, arc2, ellipse, D_D, arc3, arc4, arc5, arc6, arc7, OE_, OF_, CK_);
+                db.AddToModelSpace(arc2, ellipse, D_D, arc3, arc4, arc5, arc6, arc7, CK_);
                 trans.Commit();
             }
         }
