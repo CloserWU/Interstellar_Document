@@ -83,6 +83,7 @@ handleSubmit = (err, values) => {
 ## 关于怎样代理到后端 
 ---
 
+实践尝试发现修改`config/config.js`里的proxy没有用，不知道为什么。  
 可以根据Pro官网推荐的，利用nginx做请求转发。
 ```shell
 location /api/login/account {
