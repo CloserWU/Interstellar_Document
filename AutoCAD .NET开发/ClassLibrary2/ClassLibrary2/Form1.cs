@@ -53,22 +53,25 @@ namespace ClassLibrary2
         public double m = 21;        //省道数量，计算得到
         public double n;        //省道总量，计算得到
 
+        public string ServerName;
+        public string Password;
 
         public Form1()
         {
             InitializeComponent();
             //textBox1.Text = "222";
             //textBox3.Text = "222";
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            textBox11.PasswordChar = '*';
         }
 
         public void setParameters()
         {
-            
+           
             this.FW = Convert.ToDouble(textBox1.Text);         //前腰
             this.BW = Convert.ToDouble(textBox2.Text);         //后腰
             this.S  = Convert.ToDouble(textBox3.Text);    //腰长
@@ -81,7 +84,7 @@ namespace ClassLibrary2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
             setParameters();
             if(checkBox2.Checked == true || checkBox3.Checked == true)
             {
@@ -101,19 +104,27 @@ namespace ClassLibrary2
                 
                 
             }
+            //MessageBox.Show("success");
             
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string constr = "server=localhost;User Id=root;password=123456;Database=autocloth";
+
+            string constr = "server=localhost;User Id=" + ServerName + ";password=" + Password + ";Database=autocloth";
+            Console.WriteLine(constr);
             MySqlConnection mycon = new MySqlConnection(constr);
+           
             try
             {
                 mycon.Open();
                 MySqlCommand mycmd = new MySqlCommand("SELECT * FROM cloth WHERE ID=" + textBox9.Text + ";", mycon);
-
+                
                 MySqlDataReader myDataReader = mycmd.ExecuteReader();
+                if (myDataReader.HasRows == false)
+                {
+                    MessageBox.Show("无此项数据");
+                }
                 while (myDataReader.Read())
                 {
                     textBox1.Text = Convert.ToString(myDataReader.GetInt32("FW"));
@@ -130,6 +141,7 @@ namespace ClassLibrary2
             catch(Exception e1)
             {
                 Console.WriteLine(e1.ToString());
+                MessageBox.Show("连接失败");
             }
             finally
             {
@@ -138,9 +150,63 @@ namespace ClassLibrary2
             
         }
 
+       
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Document doc = AcadApp.DocumentManager.MdiActiveDocument;
+            //doc.SendStringToExecute("AI_SELLALL\nERASE\n", true, false, true);
+            doc.SendStringToExecute("ERASE\nALL\n", true, false, true);
+            doc.SendStringToExecute("\n", true, false, true);
+
+            this.checkBox1.Checked = false;
+            this.checkBox2.Checked = false;
+            this.checkBox3.Checked = false;
+            this.checkBox4.Checked = false;
+            
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Document doc = AcadApp.DocumentManager.MdiActiveDocument;
+            doc.SendStringToExecute("SAVE\n", true, false, true);
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
+            ServerName = textBox10.Text;
+            Password = textBox11.Text;
+            string constr = "server=localhost;User Id=" + ServerName + ";password=" + Password + ";Database=autocloth";
+            MySqlConnection mycon = new MySqlConnection(constr);
+            try
+            {
+                mycon.Open();
+                MessageBox.Show("连接成功，请进行下一步动作");
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.ToString());
+                MessageBox.Show("连接失败");
+                Password = null;
+                ServerName = null;
+            }
+            finally
+            {
+                mycon.Close();
+                textBox11.Text = null;
+            }
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Document doc = AcadApp.DocumentManager.MdiActiveDocument;
+            doc.SendStringToExecute("ZOOM E\n", true, false, true);
+            doc.SendStringToExecute("ENTER\n", true, false, true);
+            doc.SendStringToExecute("ENTER\n", true, false, true);
+            doc.SendStringToExecute("ENTER\n", true, false, true);
+            doc.SendStringToExecute("ENTER\n", true, false, true);
+            doc.SendStringToExecute("ENTER\n", true, false, true);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -716,6 +782,11 @@ namespace ClassLibrary2
             pts3.Add(new Point2d(point1.X, point1.Y));
             //pts3.Add(new Point2d(point2.X, point2.Y));
             return pts3;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
         
