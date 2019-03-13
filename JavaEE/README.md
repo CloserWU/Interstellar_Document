@@ -49,5 +49,13 @@ this.getServletContext().getRealPath("download/" + filename);获取WebContent的
 JdbcUtil.class.getClassLoader().getResource("db.properties").getPath();获取src文件夹内的路径  
 ```
 
+jar包
+jar包要放到WEB-INFO的lib下，并且build path  
+mysql-connector-java-5.1.47版本的不会产生时区问题  
+
+
+Cookie和Session
+Cookie的key-value中不能有空格
+
  
 
