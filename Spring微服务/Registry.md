@@ -8,7 +8,7 @@
 
 在之前的 [Docker 私有仓库](http://www.funtl.com/2018/05/13/docker/Docker-%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/) 章节中已经提到过如何配置和使用容器运行私有仓库，这里我们使用 `docker-compose` 来安装，配置如下：
 
-```text
+```yml
 version: '3.1'
 services:
   registry:
@@ -47,7 +47,7 @@ curl http://ip:5000/v2/
 
 我们的教学案例使用的是 Ubuntu Server 16.04 LTS 版本，属于 `systemd` 系统，需要在 `/etc/docker/daemon.json` 中增加如下内容（如果文件不存在请新建该文件）
 
-```text
+```json
 {
   "registry-mirrors": [
     "https://registry.docker-cn.com"
@@ -64,7 +64,7 @@ curl http://ip:5000/v2/
 
 之后重新启动服务。
 
-```text
+```shell
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker
 ```
@@ -73,7 +73,7 @@ $ sudo systemctl restart docker
 
 使用 `docker info` 命令手动检查，如果从配置中看到如下内容，说明配置成功（192.168.75.133 为教学案例 IP）
 
-```text
+```shell
 Insecure Registries:
  192.168.75.133:5000
  127.0.0.0/8
@@ -83,7 +83,7 @@ Insecure Registries:
 
 我们以 Nginx 为例测试镜像上传功能
 
-```text
+```shell
 ## 拉取一个镜像
 docker pull nginx
 
@@ -99,7 +99,7 @@ docker push 192.168.75.133:5000/nginx
 
 ## 查看全部镜像
 
-```text
+```shell
 curl -XGET http://192.168.75.133:5000/v2/_catalog
 ```
 
@@ -107,7 +107,7 @@ curl -XGET http://192.168.75.133:5000/v2/_catalog
 
 以 Nginx 为例，查看已提交的列表
 
-```text
+```shell
 curl -XGET http://192.168.75.133:5000/v2/nginx/tags/list
 ```
 
@@ -115,14 +115,14 @@ curl -XGET http://192.168.75.133:5000/v2/nginx/tags/list
 
 - 先删除镜像
 
-```text
+```shell
 docker rmi nginx
 docker rmi 192.168.75.133:5000/nginx
 ```
 
 - 再拉取镜像
 
-```text
+```shell
 docker pull 192.168.75.133:5000/nginx
 ```
 
@@ -139,7 +139,7 @@ docker pull 192.168.75.133:5000/nginx
 
 我们使用 docker-compose 来安装和运行，`docker-compose.yml` 配置如下：
 
-```text
+```yml
 version: '3.1'
 services:
   frontend:

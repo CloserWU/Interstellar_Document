@@ -29,15 +29,11 @@ services:
 
 # 在项目中使用 Maven 私服
 
-## 本节视频
-
-- [【视频】平台即服务-Nexus-在项目中使用 Maven 私服](https://www.bilibili.com/video/av27624534)
-
 ## 配置认证信息
 
 在 Maven `settings.xml` 中添加 Nexus 认证信息(`servers` 节点下)：
 
-```text
+```xml
 <server>
   <id>nexus-releases</id>
   <username>admin</username>
@@ -70,7 +66,7 @@ Snapshot: 1.0.0-SNAPSHOT
 
 在 `pom.xml` 中添加如下代码：
 
-```text
+```xml
 <distributionManagement>  
   <repository>  
     <id>nexus-releases</id>  
@@ -92,7 +88,7 @@ Snapshot: 1.0.0-SNAPSHOT
 
 ## 部署到仓库
 
-```text
+```shell
 mvn deploy
 ```
 
@@ -100,7 +96,7 @@ mvn deploy
 
 Nexus 3.0 不支持页面上传，可使用 maven 命令：
 
-```text
+```bash
 # 如第三方JAR包：aliyun-sdk-oss-2.2.3.jar
 mvn deploy:deploy-file 
   -DgroupId=com.aliyun.oss 
@@ -119,7 +115,7 @@ mvn deploy:deploy-file
 
 ## 配置代理仓库
 
-```text
+```xml
 <repositories>
     <repository>
         <id>nexus</id>
@@ -147,3 +143,4 @@ mvn deploy:deploy-file
     </pluginRepository>
 </pluginRepositories>
 ```
+
