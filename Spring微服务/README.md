@@ -101,6 +101,57 @@ systemctl daemon-reload
 systemctl restart docker
  ```
 
+
+## Docker
+例1
+```dockerfile
+FROM circleci/node:latest-browsers
+
+# COPY <源路径>... <目标路径>
+# <目标路径> 可以是容器内的绝对路径，也可以是相对于工作目录的相对路径（工作目录可以用 WORKDIR 指令来指定）。目标路径不需要事先创建，如果目录不存在会在复制文件前先行创建缺失目录。
+WORKDIR /usr/src/app/
+USER root
+COPY package.json ./
+RUN yarn
+
+COPY ./ ./
+
+RUN npm run test:all
+
+# 容器开启之后执行的命令。Docker 不是虚拟机，容器就是进程。既然是进程，那么在启动容器的时候，需要指定所运行的程序及参数。CMD 指令就是用于指定默认的容器主进程的启动命令的。Docker 不是虚拟机，容器中的应用都应该以前台执行，而不是像虚拟机、物理机里面那样，用 upstart/systemd 去启动后台服务，容器内没有后台服务的概念。  CMD service nginx start 错误的写法。正确的做法是直接执行 nginx 可执行文件，并且要求以前台形式运行。CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "build"]
+
+
+# 当指定了 ENTRYPOINT 后，CMD 的含义就发生了改变，不再是直接的运行其命令，而是将 CMD 的内容作为参数传给 ENTRYPOINT 指令，换句话说实际执行时，将变为：<ENTRYPOINT> "<CMD>"
+```
+例2
+```dockerfile
+FROM node:latest
+
+WORKDIR /usr/src/app/
+
+COPY package.json ./
+RUN npm install --silent --no-cache
+
+COPY ./ ./
+
+CMD ["npm", "run", "start"]
+```
+例3
+```dockerfile
+FROM nginx
+
+WORKDIR /usr/src/app/
+
+COPY ./docker/nginx.conf /etc/nginx/conf.d/default.conf
+
+COPY ./dist  /usr/share/nginx/html/
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"] 
+```
+
 ## Spring Boot
 
 
