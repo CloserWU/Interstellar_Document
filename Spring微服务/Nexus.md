@@ -4,7 +4,7 @@
 
 我们使用 Docker 来安装和运行 Nexus，`docker-compose.yml` 配置如下：
 
-```
+```yml
 version: '3.1'
 services:
   nexus:
