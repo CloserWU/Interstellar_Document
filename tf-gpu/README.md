@@ -115,8 +115,8 @@ pip下载nb_conda：<code>pip install nb_conda</code><br />
 注意，需要用https<br />
 
 <font color='blue'>
-在学校服务器aizql账号下的有关信息如下<br />
-jupyter服务器密码：123456<br />
+在服务器账号下的有关信息如下<br />
+jupyter服务器密码<br />
 
 <font color='black'>
 
@@ -134,7 +134,7 @@ jupyter服务器密码：123456<br />
 - 打开本地浏览器，输入https://(ip):9999。具体端口号看倒数第二行的显示，有时会是10000<br />
 - 然后点击继续前往
 
-![go](https://github.com/CloserWU/tf-gpu/raw/master/image/go.png)<br />
+
 
 - 打开一个ipynb文件，例如
 
