@@ -1,37 +1,38 @@
 # 在服务器上安装tensorflow-gpu版本及其使用 #
 ##### 本文档是在服务器上，不要su权限，全部命令行下载安装配置教程 <br />
 
-<font color='blue'>
 
-**系统 Centos7**<br />
-**所需文件**<br />
-- cuda9.0（一定是要9.0版本，9.2，10.0都是坑，亲测无效！）<br />
-- cudnn（一定要与cuda版本匹配，NVIDIA官网具体下载时要注意）<br />
-- Anaconda （本人下载的是5.4版本，其他版本只要不太低，应该也可以）<br />
 
-</font>
+**系统 Centos7**
+**所需文件**
 
-## 步骤 <br />
-    
-1.安装cuda<br />
+- cuda9.0（一定是要9.0版本，9.2，10.0都是坑，亲测无效！）
+- cudnn（一定要与cuda版本匹配，NVIDIA官网具体下载时要注意）
+- Anaconda （本人下载的是5.4版本，其他版本只要不太低，应该也可以）
+
+
+
+## 步骤 
+
+1.安装cuda
 ========
-到NVIDIA官方网站下载cuda9.0。https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=CentOS&target_version=7&target_type=runfilelocal<br />
-可以在本地打开网址查看，下载runfile(local)。<br />
+到NVIDIA官方网站下载cuda9.0。https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=CentOS&target_version=7&target_type=runfilelocal
+可以在本地打开网址查看，下载runfile(local)。
     
-![cuda](https://github.com/CloserWU/tf-gpu/raw/master/image/cuda.png)<br />
+![cuda](https://github.com/CloserWU/tf-gpu/raw/master/image/cuda.png)
 
-服务器上具体命令：<p><code>wget -c https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run</code></p><br />
-下载成功后，安装<br /><br />
+服务器上具体命令：`wget -c https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run`
+下载成功后，安装
 
 - 安装过程中刚开始会出现一大堆类似文档的东西，疯狂空格就行
-- Do you accept the previously read EULA? <br />
-- accept/decline/quit: accept（没什么好说的了直接敲accept）<br />
-- Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 396.26?  **这里是说是否安装显卡驱动，一定要选no！**<br />
-- Do you want to install the OpenGL libraries? 这是nvidia自己的opencv 没有用的,要用就用直接的opencv官网安装也很简单，所以这n<br />
-- Install the CUDA 9.2 Toolkit? 是否安装，当然yes<br />
-- Enter Toolkit Location <br />
-- default is /usr/local/cuda-9.2 :  **这个一定不要用默认的，因为没有su权限，目录选到自己home下 例如：/home/wushuai/**<br />
-然后开始安装<br /><br />
+- Do you accept the previously read EULA? 
+- accept/decline/quit: accept（没什么好说的了直接敲accept）
+- Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 396.26?  **这里是说是否安装显卡驱动，一定要选no！**
+- Do you want to install the OpenGL libraries? 这是nvidia自己的opencv 没有用的,要用就用直接的opencv官网安装也很简单，所以这n
+- Install the CUDA 9.2 Toolkit? 是否安装，当然yes
+- Enter Toolkit Location 
+- default is /usr/local/cuda-9.2 :  **这个一定不要用默认的，因为没有su权限，目录选到自己home下 例如：/home/wushuai/**
+然后开始安装<br />
 
 命令： <code>sh cuda_9.0.176_384.81_linux-run</code><br />
 配置环境变量：<br />

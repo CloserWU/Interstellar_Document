@@ -116,6 +116,7 @@ mvn deploy:deploy-file
 ## 配置代理仓库
 
 ```xml
+<!-->此为从私服下载依赖</-->
 <repositories>
     <repository>
         <id>nexus</id>
@@ -129,6 +130,7 @@ mvn deploy:deploy-file
         </releases>
     </repository>
 </repositories>
+<!-->此为部署到私服</-->
 <pluginRepositories>
     <pluginRepository>
         <id>nexus</id>
