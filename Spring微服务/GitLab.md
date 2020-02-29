@@ -14,6 +14,14 @@ docker pull twang2218/gitlab-ce-zh
 
 创建文件夹，创建文件`docker-compose.yml`
 
+```shell
+nginx端口最好不要使用80
+如果在同一台机器上同时运行gitlab和gitlab-runner，gitlab使用80的话，会导致runner注册失败
+亲测！！
+```
+
+
+
 ```yml
 version: '3'
 services:

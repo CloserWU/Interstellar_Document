@@ -33,10 +33,15 @@ RUN apt-get -y install apt-transport-https ca-certificates curl software-propert
     apt-get update -y && \
     apt-get install -y docker-ce
 COPY daemon.json /etc/docker/daemon.json
+# 无网络环境下安装
+# COPY docker/* .
+# RUN dockerd &
+# RUN cd
 
 # 安装 Docker Compose
 WORKDIR /usr/local/bin
-RUN wget https://raw.githubusercontent.com/topsale/resources/master/docker/docker-compose
+# RUN wget https://raw.githubusercontent.com/topsale/resources/master/docker/docker-compose
+COPY docker-compose .
 RUN chmod +x docker-compose
 
 # 安装 Java
@@ -49,8 +54,8 @@ RUN tar -zxvf jdk-8u152-linux-x64.tar.gz && \
 # 安装 Maven
 RUN mkdir -p /usr/local/maven
 WORKDIR /usr/local/maven
-RUN wget https://raw.githubusercontent.com/topsale/resources/master/maven/apache-maven-3.5.3-bin.tar.gz
-# COPY apache-maven-3.5.3-bin.tar.gz /usr/local/maven
+# RUN wget https://raw.githubusercontent.com/topsale/resources/master/maven/apache-maven-3.5.3-bin.tar.gz
+COPY apache-maven-3.5.3-bin.tar.gz /usr/local/maven
 RUN tar -zxvf apache-maven-3.5.3-bin.tar.gz && \
     rm -fr apache-maven-3.5.3-bin.tar.gz && \
     mkdir respo && chmod 777 respo
@@ -155,3 +160,8 @@ ENTRYPOINT ["dockerize", "-timeout", "5m", "-wait", "tcp://192.168.75.128:8888",
 
 EXPOSE 8761
 ```
+
+
+
+
+
