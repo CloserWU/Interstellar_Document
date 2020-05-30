@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<SubSystem>
+		<Name>Scope (xPC) </Name>
+		<xPCName>xpctank1/Scope (xPC) </xPCName>
+	</SubSystem>
+	<SubSystem>
+		<Name>Scope (xPC) 1</Name>
+		<xPCName>xpctank1/Scope (xPC) 1</xPCName>
+	</SubSystem>
+	<block>
+		<blkName>PumpSwitch</blkName>
+		<xpcblkName>PumpSwitch</xpcblkName>
+		<SLblockPath>xpctank1/PumpSwitch</SLblockPath>
+		<isSrc>[1 0 1]</isSrc>
+		<parameter>
+			<paramName>Value</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<block>
+		<blkName>SetPoint</blkName>
+		<xpcblkName>SetPoint</xpcblkName>
+		<SLblockPath>xpctank1/SetPoint</SLblockPath>
+		<isSrc>[1 0 1]</isSrc>
+		<parameter>
+			<paramName>Value</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<block>
+		<blkName>ValveSwitch</blkName>
+		<xpcblkName>ValveSwitch</xpcblkName>
+		<SLblockPath>xpctank1/ValveSwitch</SLblockPath>
+		<isSrc>[1 0 1]</isSrc>
+		<parameter>
+			<paramName>Value</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<block>
+		<blkName>Gain</blkName>
+		<xpcblkName>Gain</xpcblkName>
+		<SLblockPath>xpctank1/Gain</SLblockPath>
+		<isSrc>[0 1 1]</isSrc>
+		<parameter>
+			<paramName>Gain</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<block>
+		<blkName>Gain1</blkName>
+		<xpcblkName>Gain1</xpcblkName>
+		<SLblockPath>xpctank1/Gain1</SLblockPath>
+		<isSrc>[0 1 1]</isSrc>
+		<parameter>
+			<paramName>Gain</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<block>
+		<blkName>Gain2</blkName>
+		<xpcblkName>Gain2</xpcblkName>
+		<SLblockPath>xpctank1/Gain2</SLblockPath>
+		<isSrc>[0 1 1]</isSrc>
+		<parameter>
+			<paramName>Gain</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<block>
+		<blkName>TankLevel</blkName>
+		<xpcblkName>TankLevel</xpcblkName>
+		<SLblockPath>xpctank1/TankLevel</SLblockPath>
+		<isSrc>[0 1 1]</isSrc>
+		<parameter>
+			<paramName>InitialCondition</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+		<parameter>
+			<paramName>UpperSaturationLimit</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+		<parameter>
+			<paramName>LowerSaturationLimit</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<block>
+		<blkName>Controller</blkName>
+		<xpcblkName>Controller</xpcblkName>
+		<SLblockPath>xpctank1/Controller</SLblockPath>
+		<isSrc>[0 1 1]</isSrc>
+		<parameter>
+			<paramName>OnSwitchValue</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+		<parameter>
+			<paramName>OffSwitchValue</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+		<parameter>
+			<paramName>OnOutputValue</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+		<parameter>
+			<paramName>OffOutputValue</paramName>
+			<dim>[1, 1]</dim>
+		</parameter>
+	</block>
+	<signal>
+		<sigName>SetPoint</sigName>
+		<xpcsigName>SetPoint</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>Gain</sigName>
+		<xpcsigName>Gain</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>Gain1</sigName>
+		<xpcsigName>Gain1</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>Gain2</sigName>
+		<xpcsigName>Gain2</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>TankLevel</sigName>
+		<xpcsigName>TankLevel</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>ControlValue</sigName>
+		<xpcsigName>ControlValue</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>Controller</sigName>
+		<xpcsigName>Controller</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>Sum</sigName>
+		<xpcsigName>Sum</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+	<signal>
+		<sigName>Sum1</sigName>
+		<xpcsigName>Sum1</xpcsigName>
+		<sigWidth>1</sigWidth>
+		<sigDim>[1, 1]</sigDim>
+	</signal>
+</Root>
