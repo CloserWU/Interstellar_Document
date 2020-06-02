@@ -7,3 +7,14 @@ C:\Users\Closer\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.Cor
 C:\Users\Closer\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
 C:\Users\Closer\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\Closer\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\bin\Debug\xPCFramework.dll
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\bin\Debug\xPCFramework.xml
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.Form1.resources
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.GenerateResource.cache
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Closer\Desktop\matlab\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
